@@ -20,17 +20,6 @@
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- OneSignal Integration -->
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-    <script>
-      window.OneSignalDeferred = window.OneSignalDeferred || [];
-      OneSignalDeferred.push(async function(OneSignal) {
-        await OneSignal.init({
-          appId: "7171c1c5-1f40-4c60-b965-00ff2d3b2b0f"
-        });
-      });
-    </script>
 </head>
 <body>
 
@@ -62,7 +51,7 @@
             <!-- Decorative Background Elements -->
             <div class="deco blob-1"></div>
             <div class="deco blob-2"></div>
-            <svg class="deco leaf-1" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.2;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+            <svg class="deco leaf-1" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.2;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 12 12"/></svg>
             <svg class="deco leaf-2" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--purple-bright)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.15;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 12 12"/></svg>
             
             <div class="container hero-container">
@@ -284,22 +273,6 @@
                         <div class="stat-val">e-KYC</div>
                         <div class="stat-label">सुलभ पडताळणी</div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- OneSignal Notification CTA -->
-        <section class="section notification-section">
-            <div class="container">
-                <div class="notification-card reveal">
-                    <div class="notif-content">
-                        <div class="notif-icon"><i data-lucide="bell-ring"></i></div>
-                        <div>
-                            <h2>योजनेतील नवीन माहिती मिळवा</h2>
-                            <p>महत्त्वाचे अपडेट्स आणि नवीन माहिती थेट मिळवण्यासाठी सूचना सुरू करा.</p>
-                        </div>
-                    </div>
-                    <button id="onesignal-btn" class="btn btn-gradient btn-large">🔔 सूचना सुरू करा</button>
                 </div>
             </div>
         </section>
