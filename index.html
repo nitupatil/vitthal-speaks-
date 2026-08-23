@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>लेक लाडकी योजना | अर्ज प्रक्रिया, लाभ, पात्रता आणि महत्त्वाची माहिती</title>
-    <meta name="description" content="लेक लाडकी योजनेचा लाभ मिळवणे आता झाले आणखी सुलभ. अर्ज प्रक्रिया, लाभाचे टप्पे, पात्रता आणि महत्त्वाची मुदत यांची संपूर्ण माहिती.">
+    <title>लेक लाडकी योजना | अर्ज प्रक्रिया, लाभ, पात्रता आणि आवश्यक कागदपत्रे</title>
+    <meta name="description" content="लेक लाडकी योजनेचा लाभ मिळवणे आता झाले आणखी सुलभ. अर्ज प्रक्रिया, लाभाचे टप्पे, पात्रता, आवश्यक कागदपत्रे आणि महत्त्वाची मुदत यांची संपूर्ण माहिती.">
     <link rel="canonical" href="https://www.vitthalspeaks.com/">
     
     <!-- Open Graph Metadata -->
     <meta property="og:title" content="लेक लाडकी योजना | अर्ज प्रक्रिया, लाभ, पात्रता">
-    <meta property="og:description" content="अर्ज प्रक्रिया झाली आणखी सोपी, जलद आणि पारदर्शक. ₹1.01 लाखांचा एकूण लाभ.">
+    <meta property="og:description" content="अर्ज प्रक्रिया झाली आणखी सोपी, जलद आणि पारदर्शक. ₹1.01 लाखांचा एकूण लाभ. पात्रता आणि आवश्यक कागदपत्रे जाणून घ्या.">
     <meta property="og:url" content="https://www.vitthalspeaks.com/">
     <meta property="og:type" content="website">
 
@@ -75,8 +75,8 @@
         header.scrolled { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); }
         .header-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(to right, var(--purple-deep), var(--magenta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .nav-menu ul { display: flex; gap: 32px; }
-        .nav-menu a { font-weight: 500; color: var(--text-dark); transition: var(--transition); }
+        .nav-menu ul { display: flex; gap: 24px; }
+        .nav-menu a { font-weight: 500; color: var(--text-dark); transition: var(--transition); font-size: 0.95rem; }
         .nav-menu a:hover { color: var(--magenta); }
         .header-actions { display: flex; align-items: center; gap: 16px; }
         .hamburger { display: none; background: none; border: none; color: var(--purple-deep); cursor: pointer; }
@@ -143,17 +143,22 @@
         .total-amount { font-size: 3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
         /* =========================================
-           ELIGIBILITY, STATS & FAQ
+           ELIGIBILITY, DOCUMENTS & MORE INFO
         ========================================= */
-        .eligibility-box { background: var(--white); padding: 40px; border-radius: 24px; box-shadow: var(--shadow-soft); max-width: 700px; margin: 0 auto; border-top: 5px solid var(--magenta); }
-        .eligibility-list li { display: flex; align-items: center; gap: 16px; font-size: 1.1rem; padding: 16px 0; border-bottom: 1px solid var(--bg-peach); }
-        .eligibility-list li:last-child { border-bottom: none; }
-        .eligibility-list i { color: var(--purple-bright); }
+        .eligibility-box, .more-info-box { background: var(--white); padding: 40px; border-radius: 24px; box-shadow: var(--shadow-soft); max-width: 800px; margin: 0 auto; border-top: 5px solid var(--magenta); }
+        .eligibility-list li, .info-list li { display: flex; align-items: flex-start; gap: 16px; font-size: 1.1rem; padding: 16px 0; border-bottom: 1px solid var(--bg-peach); }
+        .eligibility-list li:last-child, .info-list li:last-child { border-bottom: none; }
+        .eligibility-list i, .info-list i { color: var(--purple-bright); margin-top: 4px; flex-shrink: 0; }
 
-        .stat-card { text-align: center; padding: 32px 20px; background: var(--white); border-radius: 24px; box-shadow: var(--shadow-soft); }
-        .stat-val { font-size: 2.5rem; font-weight: 800; color: var(--magenta); margin-bottom: 8px; }
-        .stat-label { font-weight: 600; color: var(--text-dark); }
+        .doc-item { background: var(--white); padding: 20px; border-radius: 16px; display: flex; align-items: center; gap: 16px; box-shadow: var(--shadow-soft); font-weight: 600; color: var(--text-dark); border-left: 4px solid var(--magenta); transition: var(--transition); }
+        .doc-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+        .doc-item i { color: var(--purple-bright); flex-shrink: 0; width: 24px; height: 24px;}
 
+        .highlight-box { background: var(--bg-peach); color: var(--purple-deep); padding: 20px; border-radius: 12px; text-align: center; font-weight: 700; margin-top: 24px; border: 1px dashed var(--magenta); }
+
+        /* =========================================
+           FAQ
+        ========================================= */
         .faq-container { max-width: 800px; margin: 0 auto; }
         .faq-item { background: var(--white); border-radius: 16px; margin-bottom: 16px; box-shadow: var(--shadow-soft); overflow: hidden; }
         .faq-question { width: 100%; padding: 24px; display: flex; justify-content: space-between; align-items: center; background: none; border: none; font-size: 1.1rem; font-weight: 600; color: var(--text-dark); cursor: pointer; text-align: left; font-family: inherit; }
@@ -196,8 +201,7 @@
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
-            display: none; /* Initially hidden */
-            align-items: center; justify-content: center;
+            display: none; align-items: center; justify-content: center;
             z-index: 9999; padding: 20px;
         }
         .modal-card {
@@ -234,7 +238,7 @@
            RESPONSIVE DESIGN (MOBILE FIRST FOCUS)
         ========================================= */
         @media (max-width: 1024px) {
-            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); }
             .hero-content h1 { font-size: 2.5rem; }
         }
         @media (max-width: 768px) {
@@ -258,12 +262,13 @@
         }
         @media (max-width: 430px) {
             .section { padding: 50px 0; }
-            .grid-4 { grid-template-columns: 1fr; }
+            .grid-4, .grid-3 { grid-template-columns: 1fr; }
             .hero-content h1 { font-size: 1.8rem; }
             .timeline-container { padding-left: 10px; }
             .timeline-dot { width: 40px; height: 40px; margin-right: 15px; }
             .total-amount { font-size: 2.2rem; }
             .total-benefit { padding: 30px 20px; }
+            .doc-item { padding: 15px; font-size: 0.95rem;}
         }
     </style>
 </head>
@@ -274,18 +279,15 @@
     =========================================== -->
     <div id="onesignal-modal" class="modal-overlay">
         <div class="modal-card">
-            <!-- X Button for instant dismiss -->
             <button id="close-modal" class="modal-close-btn" aria-label="Close">&times;</button>
             <div class="notification-icon">🔔</div>
             <h2>शासकीय योजनांची माहिती</h2>
             <p class="description">
                 अशाच प्रकारच्या शासकीय योजनांची माहिती मिळवण्यासाठी खाली क्लिक करा आणि महत्त्वाचे अपडेट्स थेट मोबाईलवर मिळवा.
             </p>
-            
             <button id="notifyButton" type="button">
                 🔔 सूचना सुरू करा
             </button>
-            
             <div id="status"></div>
         </div>
     </div>
@@ -298,14 +300,15 @@
             <a href="#" class="logo">लेक लाडकी योजना</a>
             <nav class="nav-menu" id="nav-menu">
                 <ul>
-                    <li><a href="#application">अर्ज प्रक्रिया</a></li>
                     <li><a href="#benefits">लाभ</a></li>
                     <li><a href="#timeline">टप्पे</a></li>
-                    <li><a href="#eligibility">पात्रता</a></li>
+                    <li><a href="#deadline">मुदत</a></li>
+                    <li><a href="#eligibility">नियम व अटी</a></li>
+                    <li><a href="#documents">कागदपत्रे</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <a href="#application" class="btn btn-gradient desktop-btn">अर्ज प्रक्रिया जाणून घ्या</a>
+                <a href="#application" class="btn btn-gradient desktop-btn">अर्ज प्रक्रिया</a>
                 <button class="hamburger" id="hamburger" aria-label="Menu"><i data-lucide="menu"></i></button>
             </div>
         </div>
@@ -322,12 +325,11 @@
             <div class="container hero-container">
                 <div class="hero-content reveal">
                     <h1>लेक लाडकी योजनेचा लाभ मिळवणे आता झाले आणखी सुलभ</h1>
-                    <p class="subtitle">अर्ज प्रक्रियेत नेमकं काय बदललं? जाणून घेऊया!</p>
+                    <p class="subtitle">अर्ज प्रक्रियेत नेमकं काय बदललं? योजनेची संपूर्ण माहिती थेट खालीलप्रमाणे.</p>
                     <a href="#application" class="btn btn-primary btn-large">अर्ज प्रक्रिया जाणून घ्या <i data-lucide="arrow-right"></i></a>
                 </div>
                 
                 <div class="hero-visual reveal">
-                    <!-- Generic Abstract Mother & Daughter Illustration -->
                     <svg viewBox="0 0 400 400" class="hero-svg">
                         <circle cx="200" cy="200" r="180" fill="var(--peach)" opacity="0.4" />
                         <circle cx="200" cy="200" r="140" fill="var(--pink-soft)" opacity="0.6" />
@@ -352,7 +354,6 @@
                     <div class="card reveal" style="transition-delay: 0.2s;"><div class="card-icon-wrap"><i data-lucide="user-check"></i></div><span class="card-badge">03</span><h3>माहिती ऑटो-फेच</h3><p>आधार क्रमांकाच्या आधारे माहिती ऑटो-फेच केली जाणार.</p></div>
                     <div class="card reveal" style="transition-delay: 0.3s;"><div class="card-icon-wrap"><i data-lucide="shield-check"></i></div><span class="card-badge">04</span><h3>e-KYC</h3><p>लाभार्थी मुलगी, तिचे माता-पिता यांची e-KYC करण्यात येणार.</p></div>
                 </div>
-                <p class="section-highlight reveal" style="margin-top: 40px;">सोपी, वेगवान आणि विश्वासार्ह अर्ज प्रक्रिया प्रत्येक लाडक्या लेकीसाठी</p>
             </div>
         </section>
 
@@ -382,6 +383,7 @@
         <section id="timeline" class="section">
             <div class="container">
                 <h2 class="section-title reveal">मुलीच्या उज्ज्वल भविष्यासाठी एकूण ₹1.01 लाख रुपयांची तरतूद</h2>
+                <p class="section-highlight reveal">या योजनेच्या माध्यमातून मिळणारा पैसे खालील ५ टप्प्यांमध्ये मिळणार आहे:</p>
                 
                 <div class="timeline-container">
                     <div class="timeline">
@@ -401,53 +403,81 @@
         </section>
 
         <!-- Deadlines Section -->
-        <section class="section section-alt">
+        <section id="deadline" class="section section-alt">
             <div class="container">
-                <h2 class="section-title reveal">अर्जाची महत्त्वाची मुदत</h2>
-                <div class="grid-3">
+                <h2 class="section-title reveal">मुलीच्या जन्मानंतर किती दिवसांपर्यंत अर्ज करता येईल?</h2>
+                <div class="grid-2">
                     <div class="card reveal"><div class="card-icon-wrap"><i data-lucide="calendar-days"></i></div>
-                        <p><strong>१ एप्रिल २०२३</strong> पासून पात्र ठरलेल्या लाभार्थ्यांना <strong>१५ ऑगस्ट २०२५</strong> पर्यंत ऑनलाइन अर्जाची संधी</p>
+                        <p><strong>१ एप्रिल २०२३</strong> पासून पात्र ठरलेल्या लाभार्थ्यांना <strong>१५ ऑगस्ट २०२७</strong> पर्यंत ऑनलाइन अर्ज करण्याची संधी.</p>
                     </div>
                     <div class="card reveal"><div class="card-icon-wrap"><i data-lucide="clock"></i></div>
-                        <p>त्यानंतरच्या नवीन प्रकरणांसाठी मुलीच्या जन्मानंतर १ वर्षाच्या आत अर्ज करावा लागणार</p>
-                    </div>
-                    <div class="card reveal"><div class="card-icon-wrap"><i data-lucide="check-circle"></i></div>
-                        <p>कुटुंब महाराष्ट्राचे रहिवासी असणे, पिवळे/केशरी रेशन कार्ड असणे आणि शासनाने निश्चित केलेल्या उत्पन्न व इतर पात्रता अटी पूर्ण करणे आवश्यक आहे.</p>
+                        <p>त्यानंतरच्या नवीन प्रकरणांसाठी मुलीच्या जन्मानंतर <strong>१ वर्षाच्या आत</strong> अर्ज करावा लागणार.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Eligibility Section -->
+        <!-- Eligibility Section (Updated Rules) -->
         <section id="eligibility" class="section">
             <div class="container">
-                <h2 class="section-title reveal">पात्रता</h2>
+                <h2 class="section-title reveal">योजनेच्या नियम व अटी</h2>
                 <div class="eligibility-box reveal">
                     <ul class="eligibility-list">
-                        <li><i data-lucide="check-circle"></i> महाराष्ट्राचे रहिवासी</li>
-                        <li><i data-lucide="check-circle"></i> पिवळे/केशरी रेशन कार्ड</li>
-                        <li><i data-lucide="check-circle"></i> शासनाने निश्चित केलेल्या उत्पन्नाच्या अटी</li>
-                        <li><i data-lucide="check-circle"></i> इतर आवश्यक पात्रता अटी</li>
+                        <li><i data-lucide="check-circle"></i> अर्जदार महाराष्ट्र राज्याचा रहिवासी असावा.</li>
+                        <li><i data-lucide="check-circle"></i> लाभार्थी कुटुंबाचे वार्षिक उत्पन्न ₹1 लाखांपेक्षा कमी असावे.</li>
+                        <li><i data-lucide="check-circle"></i> लाभार्थीकडे महाराष्ट्रातील बँक खाते असणे आवश्यक आहे.</li>
+                        <li><i data-lucide="check-circle"></i> 1 एप्रिल 2023 किंवा त्यानंतर जन्मलेल्या मुली या योजनेसाठी पात्र असतील.</li>
+                        <li><i data-lucide="check-circle"></i> पिवळे किंवा केशरी रेशन कार्ड असलेली कुटुंबे अर्ज करू शकतात.</li>
+                        <li><i data-lucide="check-circle"></i> एका कुटुंबातील जास्तीत जास्त दोन मुलींना या योजनेचा लाभ दिला जाईल.</li>
+                        <li><i data-lucide="check-circle"></i> पहिल्या अपत्याच्या तिसऱ्या हप्त्यासाठी आणि दुसऱ्या अपत्याच्या दुसऱ्या हप्त्यासाठी कुटुंब नियोजन प्रमाणपत्र सादर करावे लागेल.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Summary Statistics -->
-        <section class="section section-alt">
+        <!-- Documents Section (NEW) -->
+        <section id="documents" class="section section-alt">
             <div class="container">
-                <h2 class="section-title reveal">लेक लाडकी योजनेतील महत्त्वाचे मुद्दे</h2>
-                <div class="grid-4">
-                    <div class="stat-card reveal"><div class="stat-val">₹1,01,000</div><div class="stat-label">एकूण लाभ</div></div>
-                    <div class="stat-card reveal" style="transition-delay: 0.1s;"><div class="stat-val">5</div><div class="stat-label">लाभाचे टप्पे</div></div>
-                    <div class="stat-card reveal" style="transition-delay: 0.2s;"><div class="stat-val">DBT</div><div class="stat-label">थेट बँक खात्यात लाभ</div></div>
-                    <div class="stat-card reveal" style="transition-delay: 0.3s;"><div class="stat-val">e-KYC</div><div class="stat-label">सुलभ पडताळणी</div></div>
+                <h2 class="section-title reveal">अर्ज करण्यासाठी लागणारी कागदपत्रे</h2>
+                <div class="grid-3">
+                    <div class="doc-item reveal"><i data-lucide="file-text"></i> महाराष्ट्र राज्याचे रहिवासी प्रमाणपत्र</div>
+                    <div class="doc-item reveal"><i data-lucide="credit-card"></i> पालकांचे आधार कार्ड</div>
+                    <div class="doc-item reveal"><i data-lucide="file-spreadsheet"></i> वार्षिक उत्पन्न प्रमाणपत्र (₹1 लाखांपेक्षा कमी)</div>
+                    <div class="doc-item reveal"><i data-lucide="file"></i> केशरी किंवा पिवळे रेशन कार्ड</div>
+                    <div class="doc-item reveal"><i data-lucide="baby"></i> मुलीचा जन्म दाखला</div>
+                    <div class="doc-item reveal"><i data-lucide="users"></i> कुटुंब नियोजन प्रमाणपत्र</div>
+                    <div class="doc-item reveal"><i data-lucide="landmark"></i> बँक पासबुक</div>
+                    <div class="doc-item reveal"><i data-lucide="edit-3"></i> स्व-घोषणा प्रमाणपत्र</div>
+                    <div class="doc-item reveal"><i data-lucide="user-check"></i> अंतिम लाभासाठी मुलीचे मतदान ओळखपत्र</div>
+                    <div class="doc-item reveal"><i data-lucide="graduation-cap"></i> मुलगी शिक्षण घेत असल्यास चालू वर्षाचे बोनाफाइड प्रमाणपत्र</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- More Info Summary (NEW) -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title reveal">योजनेबद्दलची अधिक माहिती</h2>
+                <div class="more-info-box reveal" style="border-top-color: var(--pink);">
+                    <ul class="info-list">
+                        <li><i data-lucide="arrow-right-circle"></i> ‘आपले सरकार’ पोर्टलवरून थेट ऑनलाइन अर्ज करता येणार.</li>
+                        <li><i data-lucide="arrow-right-circle"></i> अर्जासाठी आवश्यक कागदपत्रांची संख्या कमी होणार.</li>
+                        <li><i data-lucide="arrow-right-circle"></i> आधार क्रमांकाच्या आधारे आवश्यक माहिती ऑटो-फेच केली जाणार.</li>
+                        <li><i data-lucide="arrow-right-circle"></i> लाभार्थी मुलींसह मातांचे e-KYC करण्यात येणार.</li>
+                        <li><i data-lucide="arrow-right-circle"></i> मुलीच्या जन्मानंतर एकदाच अर्ज करावा लागणार.</li>
+                        <li><i data-lucide="arrow-right-circle"></i> योजनेची लाभाची रक्कम DBT द्वारे थेट लाभार्थ्यांच्या बँक खात्यात जमा होणार.</li>
+                        <li><i data-lucide="arrow-right-circle"></i> अंगणवाडी व बँक तपशील स्वतः देण्याची गरज राहणार नाही.</li>
+                        <li><i data-lucide="arrow-right-circle"></i> वारंवार कागदपत्रे सादर करण्याची गरज भासणार नाही.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        म्हणजेच, लेक लाडकी योजनेचा लाभ घेण्यासाठी अर्ज प्रक्रिया आता अधिक सोपी, वेगवान आणि विश्वासार्ह होणार आहे.
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- FAQ Section -->
-        <section class="section">
+        <section class="section section-alt">
             <div class="container faq-container">
                 <h2 class="section-title reveal">वारंवार विचारले जाणारे प्रश्न</h2>
                 
@@ -580,7 +610,7 @@
             // WhatsApp Share Logic
             const waBtn = document.getElementById('wa-share-btn');
             const shareUrl = "https://www.vitthalspeaks.com/";
-            const shareText = "लेक लाडकी योजना - अर्ज प्रक्रिया, लाभ, पात्रता आणि महत्त्वाची माहिती नक्की वाचा:\n";
+            const shareText = "लेक लाडकी योजना - अर्ज प्रक्रिया, लाभ, आवश्यक कागदपत्रे आणि महत्त्वाची माहिती नक्की वाचा:\n";
             waBtn.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + shareUrl)}`;
         });
 
