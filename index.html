@@ -167,27 +167,13 @@
            WHATSAPP SHARE BUTTON (FLOATING)
         ========================================= */
         .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: var(--whatsapp-green);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: var(--transition);
-            cursor: pointer;
-            text-decoration: none;
+            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+            background-color: var(--whatsapp-green); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 1000;
+            transition: var(--transition); cursor: pointer; text-decoration: none;
         }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
-        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5); }
         .whatsapp-float svg { width: 34px; height: 34px; fill: white; }
 
         /* =========================================
@@ -210,7 +196,7 @@
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
-            display: none; /* Initially hidden, JS will show if needed */
+            display: none; /* Initially hidden */
             align-items: center; justify-content: center;
             z-index: 9999; padding: 20px;
         }
@@ -616,14 +602,14 @@
                     notifyButton: { enable: false }
                 });
 
-                // Check if already subscribed
-                const permission = await OneSignal.Notifications.permission;
+                // Check if user is already opted in (returns boolean in v16)
+                const isSubscribed = OneSignal.User.PushSubscription.optedIn;
                 
-                if (permission === 'granted') {
-                    // User already subscribed, DO NOT show modal
+                if (isSubscribed === true) {
+                    // User already subscribed, DO NOT show modal at all
                     modal.style.display = 'none';
                 } else {
-                    // Show modal if not subscribed or permission denied previously
+                    // Show modal if not subscribed
                     modal.style.display = 'flex';
                 }
 
@@ -634,10 +620,10 @@
                     status.innerText = "कृपया ब्राउझरने विचारल्यावर 'Allow' वर क्लिक करा.";
 
                     try {
-                        await OneSignal.Notifications.requestPermission();
-                        const newPermission = await OneSignal.Notifications.permission;
+                        // In v16, requestPermission returns a boolean directly
+                        const accepted = await OneSignal.Notifications.requestPermission();
 
-                        if (newPermission === 'granted') {
+                        if (accepted === true) {
                             // SUCCESS: Hide Modal quickly without showing any ID
                             status.innerHTML = "✅ सूचना यशस्वीरीत्या सुरू झाल्या आहेत!";
                             button.innerHTML = "✅ यशस्वी";
