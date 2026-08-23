@@ -104,19 +104,6 @@ p { color: var(--text-muted); font-size: 1.05rem; }
     font-size: 1.1rem;
 }
 
-.btn:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-    color: #666;
-}
-
-.btn.subscribed {
-    background: var(--purple-deep);
-    color: var(--white);
-}
-
 /* Header */
 header {
     position: fixed;
@@ -537,43 +524,10 @@ header.scrolled {
     color: var(--text-dark);
 }
 
-/* Notifications */
-.notification-card {
-    background: var(--white);
-    border-radius: 32px;
-    padding: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(194, 24, 117, 0.1);
-}
-
-.notif-content {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.notif-icon {
-    width: 72px;
-    height: 72px;
-    background: var(--bg-peach);
-    color: var(--magenta);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.notif-content h2 {
-    margin: 0 0 8px;
-    text-align: left;
-}
-
 /* FAQ Accordion */
 .faq-container {
     max-width: 800px;
+    margin: 0 auto;
 }
 
 .faq-item {
@@ -710,17 +664,6 @@ footer {
     
     .flow-visual { flex-direction: column; }
     .flow-arrow { transform: rotate(90deg); }
-
-    .notification-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 32px;
-        padding: 32px 24px;
-    }
-
-    .notif-content {
-        flex-direction: column;
-    }
 }
 
 @media (max-width: 430px) {
