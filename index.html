@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>लेक लाडकी योजना | अर्ज प्रक्रिया, लाभ, पात्रता आणि महत्त्वाची माहिती</title>
-    <meta name="description" content="लेक लाडकी योजनेचा लाभ मिळवणे आता झाले आणखी सुलभ. अर्ज प्रक्रिया, लाभाचे टप्पे, पात्रता आणि महत्त्वाची मुदत यांची संपूर्ण माहिती.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,14 +36,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html {
-            scroll-behavior: smooth;
-            font-family: 'Noto Sans Devanagari', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-cream);
-            overflow-x: hidden;
-        }
-
+        html { scroll-behavior: smooth; font-family: 'Noto Sans Devanagari', sans-serif; color: var(--text-dark); background-color: var(--bg-cream); overflow-x: hidden; }
         body { line-height: 1.6; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
@@ -58,14 +50,8 @@
         p { color: var(--text-muted); font-size: 1.05rem; }
 
         /* Header */
-        header {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            transition: var(--transition); background-color: transparent;
-        }
-        header.scrolled {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
+        header { position: fixed; top: 0; width: 100%; z-index: 1000; transition: var(--transition); background-color: transparent; }
+        header.scrolled { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); }
         .header-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
         .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(to right, var(--purple-deep), var(--magenta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .nav-menu ul { display: flex; gap: 32px; }
@@ -124,7 +110,7 @@
         .reveal.reveal-active { opacity: 1; transform: translateY(0); }
 
         /* =========================================
-           ONESIGNAL POPUP MODAL (ON SITE OPEN)
+           ONESIGNAL POPUP MODAL (FIXED & ROBUST)
         ========================================= */
         .modal-overlay {
             position: fixed;
@@ -148,17 +134,23 @@
             position: relative;
         }
 
+        /* Improved Close Button for guaranteed clicking */
         .modal-close-btn {
             position: absolute;
             top: 15px; right: 20px;
             background: rgba(255,255,255,0.2);
-            border: none;
+            border: 2px solid rgba(255,255,255,0.4);
             color: white;
-            font-size: 1.5rem;
-            width: 36px; height: 36px;
+            font-size: 1.8rem;
+            width: 40px; height: 40px;
             border-radius: 50%;
             cursor: pointer;
             display: flex; align-items: center; justify-content: center;
+            z-index: 10000; /* Ensures it is always on top */
+            transition: background 0.3s ease;
+        }
+        .modal-close-btn:hover {
+            background: rgba(255,255,255,0.4);
         }
 
         .modal-card .notification-icon {
@@ -171,29 +163,13 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        .modal-card h2 {
-            color: #ffffff;
-            font-size: 26px;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-
-        .modal-card .description {
-            font-size: 15px;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 28px;
-        }
+        .modal-card h2 { color: #ffffff; font-size: 24px; margin-bottom: 12px; font-weight: 700; }
+        .modal-card .description { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.9); margin-bottom: 28px; }
 
         #notifyButton {
-            width: 100%;
-            border: none; border-radius: 14px;
-            padding: 16px 20px;
-            background: #ffffff;
-            color: var(--purple-deep);
-            font-size: 16px; font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            width: 100%; border: none; border-radius: 14px; padding: 16px 20px;
+            background: #ffffff; color: var(--purple-deep); font-size: 16px; font-weight: 700;
+            cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 10px 25px rgba(0,0,0,0.18);
         }
         #notifyButton:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(0,0,0,0.25); }
@@ -202,42 +178,24 @@
         #status { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,0.9); }
 
         .device-box {
-            display: none;
-            margin-top: 20px; padding: 16px;
-            text-align: left; border-radius: 14px;
-            background: rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.2);
+            display: none; margin-top: 20px; padding: 16px; text-align: left; border-radius: 14px;
+            background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2);
         }
-        
-        .device-title {
-            font-size: 12px; text-transform: uppercase;
-            letter-spacing: 0.8px; color: rgba(255,255,255,0.7);
-            margin-bottom: 8px;
-        }
-
+        .device-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
         #deviceId { font-size: 13px; word-break: break-all; color: #ffffff; margin-bottom: 12px; font-weight: 600;}
 
-        #copyButton {
-            width: 100%; border: none; border-radius: 10px;
-            padding: 11px; background: rgba(255,255,255,0.2);
-            color: #ffffff; font-size: 13px; cursor: pointer;
-        }
+        #copyButton { width: 100%; border: none; border-radius: 10px; padding: 11px; background: rgba(255,255,255,0.2); color: #ffffff; font-size: 13px; cursor: pointer; }
         #copyButton:hover { background: rgba(255,255,255,0.3); }
 
-        .loading {
-            display: inline-block; width: 15px; height: 15px; margin-right: 7px;
-            border: 2px solid rgba(255,255,255,0.3); border-top-color: #ffffff;
-            border-radius: 50%; animation: spin 0.8s linear infinite;
-        }
+        .loading { display: inline-block; width: 15px; height: 15px; margin-right: 7px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #ffffff; border-radius: 50%; animation: spin 0.8s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .grid-4 { grid-template-columns: repeat(2, 1fr); }
             .grid-3, .grid-2 { grid-template-columns: 1fr; }
             .hero-container { flex-direction: column; text-align: center; }
             .hero-content h1 { font-size: 2rem; }
-            .nav-menu { display: none; } /* Simplified for mobile */
+            .nav-menu { display: none; }
             .hamburger { display: block; }
         }
         @media (max-width: 430px) {
@@ -253,7 +211,7 @@
     =========================================== -->
     <div id="onesignal-modal" class="modal-overlay">
         <div class="modal-card">
-            <button id="close-modal" class="modal-close-btn">&times;</button>
+            <button id="close-modal" class="modal-close-btn" aria-label="Close">&times;</button>
             <div class="notification-icon">🔔</div>
             <h2>शासकीय योजनांची माहिती</h2>
             <p class="description">
@@ -266,7 +224,6 @@
             
             <div id="status">प्रणाली सुरू करत आहे...</div>
 
-            <!-- Device ID Box -->
             <div class="device-box" id="deviceBox">
                 <div class="device-title">OneSignal Subscription ID</div>
                 <div id="deviceId"></div>
@@ -376,6 +333,17 @@
     =========================================== -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
+        // GUARANTEED CLOSE BUTTON FUNCTIONALITY (Runs immediately)
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById("onesignal-modal");
+            const btnCloseModal = document.getElementById("close-modal");
+            
+            btnCloseModal.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'none'; // Closes modal immediately
+            });
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize Icons
             if (typeof lucide !== 'undefined') { lucide.createIcons(); }
@@ -399,113 +367,100 @@
                     });
                 }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
                 revealElements.forEach(el => observer.observe(el));
-            } else {
-                revealElements.forEach(el => el.classList.add('reveal-active'));
             }
 
             /* ==========================================================
-               ONESIGNAL NOTIFICATION LOGIC (FETCH ID ON SITE OPEN)
+               ONESIGNAL NOTIFICATION LOGIC 
             ========================================================== */
-            const ONESIGNAL_APP_ID = "7171c1c5-1f40-4c60-b965-00ff2d3b2b0f";[cite: 1]
+            const ONESIGNAL_APP_ID = "7171c1c5-1f40-4c60-b965-00ff2d3b2b0f";
             
+            const button = document.getElementById("notifyButton");
+            const status = document.getElementById("status");
+            const deviceBox = document.getElementById("deviceBox");
+            const deviceIdElement = document.getElementById("deviceId");
+            const copyButton = document.getElementById("copyButton");
             const modal = document.getElementById("onesignal-modal");
-            const btnCloseModal = document.getElementById("close-modal");
-            const button = document.getElementById("notifyButton");[cite: 1]
-            const status = document.getElementById("status");[cite: 1]
-            const deviceBox = document.getElementById("deviceBox");[cite: 1]
-            const deviceIdElement = document.getElementById("deviceId");[cite: 1]
-            const copyButton = document.getElementById("copyButton");[cite: 1]
             
-            let currentDeviceId = null;[cite: 1]
+            let currentDeviceId = null;
 
-            // Close Modal Logic
-            btnCloseModal.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-
-            window.OneSignalDeferred = window.OneSignalDeferred || [];[cite: 1]
-
-            OneSignalDeferred.push(async function(OneSignal) {[cite: 1]
+            window.OneSignalDeferred = window.OneSignalDeferred || [];
+            OneSignalDeferred.push(async function(OneSignal) {
                 try {
-                    await OneSignal.init({[cite: 1]
-                        appId: ONESIGNAL_APP_ID,[cite: 1]
-                        notifyButton: { enable: false }
+                    await OneSignal.init({
+                        appId: ONESIGNAL_APP_ID,
+                        notifyButton: { enable: false },
+                        allowLocalhostAsSecureOrigin: true // Important for local testing
                     });
 
-                    button.disabled = false;[cite: 1]
-                    button.innerHTML = "🔔 सूचना सुरू करा";[cite: 1]
+                    button.disabled = false;
+                    button.innerHTML = "🔔 माहिती मिळवा";
+                    status.innerHTML = "अशाच प्रकारच्या माहितीसाठी सूचना सुरू करा.";
 
                     // Check if already subscribed
-                    const subscription = OneSignal.User.PushSubscription;[cite: 1]
-                    if (subscription && subscription.optedIn && subscription.id) {[cite: 1]
-                        // Already subscribed -> show device ID and update modal UI
-                        showDevice(subscription.id);[cite: 1]
-                        status.innerHTML = "✅ तुम्ही आधीच सूचना सुरू केल्या आहेत.";[cite: 1]
-                        button.innerHTML = "✅ सूचना सुरू आहेत";[cite: 1]
-                        button.disabled = true;[cite: 1]
-                        
-                        // Automatically close modal after 3 seconds for good UX
-                        setTimeout(() => { modal.style.display = 'none'; }, 3000);
-                    } else {
-                        status.innerHTML = "नवीन माहिती मिळवण्यासाठी सूचना सुरू करा.";[cite: 1]
+                    const subscription = OneSignal.User.PushSubscription;
+                    if (subscription && subscription.optedIn && subscription.id) {
+                        showDevice(subscription.id);
+                        status.innerHTML = "✅ तुम्ही आधीच सूचना सुरू केल्या आहेत.";
+                        button.innerHTML = "✅ सूचना सुरू आहेत";
+                        button.disabled = true;
+                        setTimeout(() => { modal.style.display = 'none'; }, 2000);
                     }
 
-                } catch(error) {[cite: 1]
-                    console.error("OneSignal init error:", error);[cite: 1]
-                    button.disabled = true;[cite: 1]
-                    button.innerHTML = "सूचना अनुपलब्ध";[cite: 1]
-                    status.innerHTML = "❌ सिस्टीम सुरू होऊ शकली नाही.";[cite: 1]
+                } catch(error) {
+                    console.error("OneSignal init error:", error);
+                    button.disabled = true;
+                    button.innerHTML = "सेवा अनुपलब्ध";
+                    status.innerHTML = "सिस्टीम सुरू होऊ शकली नाही. कृपया 'X' वर क्लिक करून माहिती वाचा.";
                 }
             });
 
             // Request Permission Button Click
-            button.addEventListener("click", async function() {[cite: 1]
-                button.disabled = true;[cite: 1]
-                button.innerHTML = '<span class="loading"></span> परवानगी विचारत आहे...';[cite: 1]
-                status.innerText = "कृपया ब्राउझरने विचारल्यावर Allow वर क्लिक करा.";[cite: 1]
+            button.addEventListener("click", async function() {
+                button.disabled = true;
+                button.innerHTML = '<span class="loading"></span> परवानगी विचारत आहे...';
+                status.innerText = "कृपया ब्राउझरने विचारल्यावर Allow वर क्लिक करा.";
 
                 try {
-                    await OneSignal.Notifications.requestPermission();[cite: 1]
-                    await wait(1500);[cite: 1] // Wait for OneSignal to generate ID
+                    await OneSignal.Notifications.requestPermission();
+                    await wait(1500);
 
-                    const subscription = OneSignal.User.PushSubscription;[cite: 1]
-                    
-                    if (subscription && subscription.optedIn && subscription.id) {[cite: 1]
-                        showDevice(subscription.id);[cite: 1]
-                        status.innerHTML = "✅ सूचना यशस्वीरीत्या सुरू झाल्या आहेत.";[cite: 1]
-                        button.innerHTML = "✅ सूचना सुरू झाल्या";[cite: 1]
-                        button.disabled = true;[cite: 1]
+                    const subscription = OneSignal.User.PushSubscription;
+                    if (subscription && subscription.optedIn && subscription.id) {
+                        showDevice(subscription.id);
+                        status.innerHTML = "✅ सूचना यशस्वीरीत्या सुरू झाल्या आहेत.";
+                        button.innerHTML = "✅ सूचना सुरू झाल्या";
+                        button.disabled = true;
                     } else {
-                        status.innerHTML = "❌ तुम्ही परवानगी नाकारली आहे.";[cite: 1]
-                        button.innerHTML = "🔔 पुन्हा प्रयत्न करा";[cite: 1]
-                        button.disabled = false;[cite: 1]
+                        status.innerHTML = "❌ तुम्ही परवानगी नाकारली आहे.";
+                        button.innerHTML = "🔔 पुन्हा प्रयत्न करा";
+                        button.disabled = false;
                     }
-                } catch(error) {[cite: 1]
-                    status.innerHTML = "❌ काहीतरी चूक झाली.";[cite: 1]
-                    button.innerHTML = "🔔 पुन्हा प्रयत्न करा";[cite: 1]
-                    button.disabled = false;[cite: 1]
+                } catch(error) {
+                    status.innerHTML = "❌ काहीतरी चूक झाली.";
+                    button.innerHTML = "🔔 पुन्हा प्रयत्न करा";
+                    button.disabled = false;
                 }
             });
 
-            function showDevice(id) {[cite: 1]
-                currentDeviceId = id;[cite: 1]
-                deviceBox.style.display = "block";[cite: 1]
-                deviceIdElement.innerText = id;[cite: 1]
+            function showDevice(id) {
+                currentDeviceId = id;
+                deviceBox.style.display = "block";
+                deviceIdElement.innerText = id;
             }
 
             // Copy Device ID
-            copyButton.addEventListener("click", async function() {[cite: 1]
-                if (!currentDeviceId) return;[cite: 1]
+            copyButton.addEventListener("click", async function() {
+                if (!currentDeviceId) return;
                 try {
-                    await navigator.clipboard.writeText(currentDeviceId);[cite: 1]
-                    copyButton.innerText = "✅ कॉपी केले!";[cite: 1]
-                    setTimeout(function() { copyButton.innerText = "📋 आयडी कॉपी करा"; }, 1500);[cite: 1]
-                } catch(error) {[cite: 1]
-                    console.error("Copy failed:", error);[cite: 1]
+                    await navigator.clipboard.writeText(currentDeviceId);
+                    copyButton.innerText = "✅ कॉपी केले!";
+                    setTimeout(function() { copyButton.innerText = "📋 आयडी कॉपी करा"; }, 1500);
+                } catch(error) {
+                    console.error("Copy failed:", error);
                 }
             });
 
-            function wait(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }[cite: 1]
+            function wait(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
         });
     </script>
 </body>
