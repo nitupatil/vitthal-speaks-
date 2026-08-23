@@ -1,870 +1,512 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Enable Notifications</title>
-
-    <!-- =====================================================
-         ONESIGNAL V16
-    ====================================================== -->
-    <script
-        src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
-        defer>
-    </script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>लेक लाडकी योजना | अर्ज प्रक्रिया, लाभ, पात्रता आणि महत्त्वाची माहिती</title>
+    <meta name="description" content="लेक लाडकी योजनेचा लाभ मिळवणे आता झाले आणखी सुलभ. अर्ज प्रक्रिया, लाभाचे टप्पे, पात्रता आणि महत्त्वाची मुदत यांची संपूर्ण माहिती.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- OneSignal SDK -->
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 
     <style>
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        /* =========================================
+           SITE COLOR PALETTE & VARIABLES
+        ========================================= */
+        :root {
+            --bg-cream: #FFF7EF;
+            --bg-peach: #FFF0E7;
+            --white: #FFFFFF;
+            --purple-deep: #5B168C;
+            --purple-bright: #7B1FA2;
+            --magenta: #C21875;
+            --pink: #E91E63;
+            --pink-soft: #F6C5D4;
+            --peach: #F8D9C8;
+            --text-dark: #1F2937;
+            --text-muted: #4B5563;
+            --shadow-soft: 0 10px 30px rgba(91, 22, 140, 0.08);
+            --shadow-hover: 0 20px 40px rgba(194, 24, 117, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        body {
-            min-height: 100vh;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-cream);
+            overflow-x: hidden;
+        }
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        body { line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
+        /* Typography */
+        h1, h2, h3, h4 { color: var(--purple-deep); line-height: 1.3; margin-bottom: 16px; }
+        h1 { font-size: 2.25rem; font-weight: 800; }
+        h2 { font-size: 1.8rem; font-weight: 700; text-align: center; }
+        h3 { font-size: 1.25rem; font-weight: 600; color: var(--magenta); }
+        p { color: var(--text-muted); font-size: 1.05rem; }
+
+        /* Header */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            transition: var(--transition); background-color: transparent;
+        }
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .header-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(to right, var(--purple-deep), var(--magenta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-menu ul { display: flex; gap: 32px; }
+        .nav-menu a { font-weight: 500; color: var(--text-dark); transition: var(--transition); }
+        .nav-menu a:hover { color: var(--magenta); }
+        .hamburger { display: none; background: none; border: none; color: var(--purple-deep); cursor: pointer; }
+
+        /* Layout & Sections */
+        .section { padding: 80px 0; }
+        .section-alt { background-color: var(--bg-peach); border-radius: 40px; margin: 20px 0; }
+        .section-title { margin-bottom: 40px; }
+        .section-highlight { text-align: center; font-size: 1.25rem; color: var(--magenta); font-weight: 600; margin: -20px 0 40px; }
+        .grid-4 { display: grid; gap: 24px; grid-template-columns: repeat(4, 1fr); }
+        .grid-3 { display: grid; gap: 24px; grid-template-columns: repeat(3, 1fr); }
+        .grid-2 { display: grid; gap: 24px; grid-template-columns: repeat(2, 1fr); }
+
+        /* Hero */
+        .hero { padding: 160px 0 100px; position: relative; overflow: hidden; background: linear-gradient(to bottom, var(--bg-cream), var(--bg-peach)); }
+        .hero-container { display: flex; align-items: center; gap: 40px; position: relative; z-index: 2; }
+        .hero-content { flex: 1; }
+        .hero-content h1 { font-size: 3rem; margin-bottom: 24px; background: linear-gradient(135deg, var(--purple-deep), var(--magenta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-visual { flex: 1; display: flex; justify-content: center; }
+        .hero-svg { width: 100%; max-width: 400px; height: auto; }
+
+        /* Cards */
+        .card { background: var(--white); padding: 32px 24px; border-radius: 24px; box-shadow: var(--shadow-soft); position: relative; transition: var(--transition); border: 1px solid rgba(91, 22, 140, 0.05); }
+        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--pink-soft); }
+        .card-icon-wrap { width: 56px; height: 56px; background: var(--bg-peach); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--magenta); margin-bottom: 20px; }
+        .card-badge { position: absolute; top: 24px; right: 24px; font-size: 2rem; font-weight: 800; color: var(--bg-peach); opacity: 0.8; }
+        .card.horizontal { display: flex; align-items: center; gap: 20px; padding: 24px; }
+        .card-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-bright), var(--magenta)); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+        /* Flow & Timeline */
+        .flow-visual { display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 56px; flex-wrap: wrap; }
+        .flow-item { display: flex; flex-direction: column; align-items: center; gap: 12px; font-weight: 600; }
+        .flow-icon { width: 80px; height: 80px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-soft); color: var(--purple-deep); border: 2px dashed var(--pink-soft); }
+        .flow-item.highlight .flow-icon { background: var(--magenta); color: var(--white); border: none; transform: scale(1.1); }
+        .timeline-container { max-width: 600px; margin: 0 auto; padding: 20px 0; }
+        .timeline { position: relative; }
+        .timeline::before { content: ''; position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--purple-bright), var(--pink)); }
+        .timeline-item { display: flex; align-items: center; margin-bottom: 32px; position: relative; }
+        .timeline-dot { width: 50px; height: 50px; background: var(--white); border: 2px solid var(--magenta); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--magenta); z-index: 2; flex-shrink: 0; margin-right: 24px; }
+        .timeline-content { background: var(--white); padding: 16px 24px; border-radius: 16px; box-shadow: var(--shadow-soft); flex: 1; display: flex; justify-content: space-between; align-items: center; }
+        .amount { font-size: 1.25rem; font-weight: 700; color: var(--purple-deep); }
+        .total-benefit { background: linear-gradient(135deg, var(--purple-deep), var(--magenta)); color: var(--white); text-align: center; padding: 40px; border-radius: 32px; max-width: 600px; margin: 40px auto 0; box-shadow: var(--shadow-hover); }
+        .total-amount { font-size: 3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+        /* Footer */
+        footer { background: var(--purple-deep); color: var(--white); padding: 60px 0 20px; text-align: center; }
+        footer h2 { color: var(--white); margin-bottom: 8px; }
+        footer p { color: var(--pink-soft); }
+        .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.reveal-active { opacity: 1; transform: translateY(0); }
+
+        /* =========================================
+           ONESIGNAL POPUP MODAL (ON SITE OPEN)
+        ========================================= */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 9999;
             padding: 20px;
-
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Arial,
-                sans-serif;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #667eea 0%,
-                    #764ba2 100%
-                );
-
-            color: #ffffff;
         }
 
-
-        .container {
+        .modal-card {
+            background: linear-gradient(135deg, var(--purple-deep) 0%, var(--magenta) 100%);
+            border-radius: 28px;
+            padding: 38px 30px;
+            text-align: center;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
             width: 100%;
             max-width: 430px;
+            color: #ffffff;
+            position: relative;
         }
 
-
-        .card {
-
-            background: rgba(255,255,255,0.12);
-
-            border: 1px solid rgba(255,255,255,0.22);
-
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-
-            border-radius: 28px;
-
-            padding: 38px 30px;
-
-            text-align: center;
-
-            box-shadow:
-                0 25px 70px rgba(0,0,0,0.25);
-        }
-
-
-        .notification-icon {
-
-            width: 82px;
-            height: 82px;
-
-            margin: 0 auto 24px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
+        .modal-close-btn {
+            position: absolute;
+            top: 15px; right: 20px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 36px; height: 36px;
             border-radius: 50%;
-
-            background: #ffffff;
-
-            font-size: 38px;
-
-            box-shadow:
-                0 10px 30px rgba(0,0,0,0.15);
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
         }
 
+        .modal-card .notification-icon {
+            width: 82px; height: 82px;
+            margin: 0 auto 24px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            background: #ffffff;
+            font-size: 38px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
 
-        h1 {
-
-            font-size: 28px;
-
+        .modal-card h2 {
+            color: #ffffff;
+            font-size: 26px;
             margin-bottom: 12px;
-
             font-weight: 700;
         }
 
-
-        .description {
-
+        .modal-card .description {
             font-size: 15px;
-
-            line-height: 1.7;
-
-            color: rgba(255,255,255,0.82);
-
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
             margin-bottom: 28px;
         }
 
-
         #notifyButton {
-
             width: 100%;
-
-            border: none;
-
-            border-radius: 14px;
-
+            border: none; border-radius: 14px;
             padding: 16px 20px;
-
             background: #ffffff;
-
-            color: #5d4ac7;
-
-            font-size: 16px;
-
-            font-weight: 700;
-
+            color: var(--purple-deep);
+            font-size: 16px; font-weight: 700;
             cursor: pointer;
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease,
-                opacity 0.2s ease;
-
-            box-shadow:
-                0 10px 25px rgba(0,0,0,0.18);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
         }
+        #notifyButton:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(0,0,0,0.25); }
+        #notifyButton:disabled { opacity: 0.6; cursor: not-allowed; }
 
-
-        #notifyButton:hover:not(:disabled) {
-
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 15px 30px rgba(0,0,0,0.25);
-        }
-
-
-        #notifyButton:active:not(:disabled) {
-
-            transform: translateY(0);
-        }
-
-
-        #notifyButton:disabled {
-
-            opacity: 0.6;
-
-            cursor: not-allowed;
-        }
-
-
-        #status {
-
-            margin-top: 20px;
-
-            font-size: 14px;
-
-            line-height: 1.5;
-
-            color: rgba(255,255,255,0.9);
-        }
-
+        #status { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,0.9); }
 
         .device-box {
-
             display: none;
-
-            margin-top: 20px;
-
-            padding: 16px;
-
-            text-align: left;
-
-            border-radius: 14px;
-
-            background: rgba(0,0,0,0.18);
-
-            border:
-                1px solid rgba(255,255,255,0.12);
+            margin-top: 20px; padding: 16px;
+            text-align: left; border-radius: 14px;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
         }
-
-
+        
         .device-title {
-
-            font-size: 12px;
-
-            text-transform: uppercase;
-
-            letter-spacing: 0.8px;
-
-            color: rgba(255,255,255,0.65);
-
+            font-size: 12px; text-transform: uppercase;
+            letter-spacing: 0.8px; color: rgba(255,255,255,0.7);
             margin-bottom: 8px;
         }
 
-
-        #deviceId {
-
-            font-size: 12px;
-
-            line-height: 1.5;
-
-            word-break: break-all;
-
-            color: #ffffff;
-
-            margin-bottom: 12px;
-        }
-
+        #deviceId { font-size: 13px; word-break: break-all; color: #ffffff; margin-bottom: 12px; font-weight: 600;}
 
         #copyButton {
-
-            width: 100%;
-
-            border: none;
-
-            border-radius: 10px;
-
-            padding: 11px;
-
-            background: rgba(255,255,255,0.15);
-
-            color: #ffffff;
-
-            font-size: 13px;
-
-            cursor: pointer;
+            width: 100%; border: none; border-radius: 10px;
+            padding: 11px; background: rgba(255,255,255,0.2);
+            color: #ffffff; font-size: 13px; cursor: pointer;
         }
-
-
-        #copyButton:hover {
-
-            background:
-                rgba(255,255,255,0.22);
-        }
-
+        #copyButton:hover { background: rgba(255,255,255,0.3); }
 
         .loading {
-
-            display: inline-block;
-
-            width: 15px;
-            height: 15px;
-
-            margin-right: 7px;
-
-            vertical-align: -2px;
-
-            border:
-                2px solid rgba(255,255,255,0.3);
-
-            border-top-color: #ffffff;
-
-            border-radius: 50%;
-
-            animation:
-                spin 0.8s linear infinite;
+            display: inline-block; width: 15px; height: 15px; margin-right: 7px;
+            border: 2px solid rgba(255,255,255,0.3); border-top-color: #ffffff;
+            border-radius: 50%; animation: spin 0.8s linear infinite;
         }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
-
-        @keyframes spin {
-
-            to {
-                transform: rotate(360deg);
-            }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3, .grid-2 { grid-template-columns: 1fr; }
+            .hero-container { flex-direction: column; text-align: center; }
+            .hero-content h1 { font-size: 2rem; }
+            .nav-menu { display: none; } /* Simplified for mobile */
+            .hamburger { display: block; }
         }
-
-
-        .footer {
-
-            margin-top: 22px;
-
-            font-size: 11px;
-
-            color:
-                rgba(255,255,255,0.55);
-
-            text-align: center;
+        @media (max-width: 430px) {
+            .grid-4 { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 1.8rem; }
         }
-
     </style>
 </head>
-
-
 <body>
 
-
-<div class="container">
-
-    <div class="card">
-
-
-        <!-- Notification icon -->
-
-        <div class="notification-icon">
-            🔔
-        </div>
-
-
-        <h1>
-            Stay Updated
-        </h1>
-
-
-        <p class="description">
-
-            Enable notifications on this device
-            to receive important updates and
-            messages directly in your browser.
-
-        </p>
-
-
-        <!-- Notification button -->
-
-        <button
-            id="notifyButton"
-            type="button"
-            disabled>
-
-            Loading...
-
-        </button>
-
-
-        <!-- Status -->
-
-        <div id="status">
-
-            <span class="loading"></span>
-            Initializing notifications...
-
-        </div>
-
-
-        <!-- Device ID -->
-
-        <div
-            class="device-box"
-            id="deviceBox">
-
-            <div class="device-title">
-                OneSignal Subscription ID
-            </div>
-
-            <div id="deviceId"></div>
-
-            <button
-                id="copyButton"
-                type="button">
-
-                📋 Copy Device ID
-
+    <!-- ==========================================
+         ONESIGNAL POPUP MODAL (ON SITE OPEN)
+    =========================================== -->
+    <div id="onesignal-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button id="close-modal" class="modal-close-btn">&times;</button>
+            <div class="notification-icon">🔔</div>
+            <h2>शासकीय योजनांची माहिती</h2>
+            <p class="description">
+                अशाच प्रकारच्या नवनवीन शासकीय योजनांची माहिती आणि महत्त्वाचे अपडेट्स थेट मिळवण्यासाठी खालील बटणावर क्लिक करून सूचना सुरू करा.
+            </p>
+            
+            <button id="notifyButton" type="button" disabled>
+                <span class="loading"></span> प्रतीक्षेत...
             </button>
+            
+            <div id="status">प्रणाली सुरू करत आहे...</div>
 
+            <!-- Device ID Box -->
+            <div class="device-box" id="deviceBox">
+                <div class="device-title">OneSignal Subscription ID</div>
+                <div id="deviceId"></div>
+                <button id="copyButton" type="button">📋 आयडी कॉपी करा</button>
+            </div>
         </div>
-
-
     </div>
 
+    <!-- ==========================================
+         MAIN WEBSITE CONTENT
+    =========================================== -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">लेक लाडकी योजना</a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#application">अर्ज प्रक्रिया</a></li>
+                    <li><a href="#benefits">लाभ</a></li>
+                    <li><a href="#timeline">टप्पे</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="hamburger" id="hamburger"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </header>
 
-    <div class="footer">
+    <main>
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content reveal">
+                    <h1>लेक लाडकी योजनेचा लाभ मिळवणे आता झाले आणखी सुलभ</h1>
+                    <p class="subtitle">अर्ज प्रक्रियेत नेमकं काय बदललं? योजनेची संपूर्ण माहिती थेट खालीलप्रमाणे.</p>
+                </div>
+                <div class="hero-visual reveal">
+                    <svg viewBox="0 0 400 400" class="hero-svg">
+                        <circle cx="200" cy="200" r="180" fill="var(--peach)" opacity="0.4" />
+                        <circle cx="200" cy="200" r="140" fill="var(--pink-soft)" opacity="0.6" />
+                        <path d="M140,320 C140,240 180,200 240,200 C300,200 340,240 340,320" fill="var(--purple-deep)" opacity="0.9" />
+                        <circle cx="240" cy="150" r="35" fill="var(--purple-deep)" opacity="0.9" />
+                        <path d="M80,320 C80,260 110,230 160,230 C200,230 220,260 220,320" fill="var(--magenta)" />
+                        <circle cx="150" cy="180" r="25" fill="var(--magenta)" />
+                    </svg>
+                </div>
+            </div>
+        </section>
 
-        Secure browser notifications powered by OneSignal
+        <section id="application" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">अर्ज प्रक्रिया झाली आणखी सोपी, जलद आणि पारदर्शक</h2>
+                <div class="grid-4">
+                    <div class="card reveal"><div class="card-icon-wrap"><i data-lucide="laptop"></i></div><span class="card-badge">01</span><h3>ऑनलाइन अर्ज</h3><p>आपले सरकार पोर्टलवरून थेट ऑनलाइन अर्ज करता येणार.</p></div>
+                    <div class="card reveal" style="transition-delay: 0.1s;"><div class="card-icon-wrap"><i data-lucide="download"></i></div><span class="card-badge">02</span><h3>कागदपत्रे कमी</h3><p>अर्ज भरण्यासाठी आवश्यक कागदपत्रांची संख्या कमी होणार.</p></div>
+                    <div class="card reveal" style="transition-delay: 0.2s;"><div class="card-icon-wrap"><i data-lucide="user-check"></i></div><span class="card-badge">03</span><h3>माहिती ऑटो-फेच</h3><p>आधार क्रमांकाच्या आधारे माहिती ऑटो-फेच केली जाणार.</p></div>
+                    <div class="card reveal" style="transition-delay: 0.3s;"><div class="card-icon-wrap"><i data-lucide="shield-check"></i></div><span class="card-badge">04</span><h3>e-KYC</h3><p>लाभार्थी मुलगी, तिचे माता-पिता यांची e-KYC करण्यात येणार.</p></div>
+                </div>
+            </div>
+        </section>
 
-    </div>
+        <section id="benefits" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title reveal">योजनेच्या लाभाची रक्कम थेट लाभार्थ्यांच्या खात्यात</h2>
+                <div class="flow-visual reveal">
+                    <div class="flow-item"><div class="flow-icon"><i data-lucide="baby"></i></div><span>मुलगी</span></div>
+                    <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+                    <div class="flow-item highlight"><div class="flow-icon"><i data-lucide="smartphone"></i></div><span>DBT</span></div>
+                    <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
+                    <div class="flow-item"><div class="flow-icon"><i data-lucide="landmark"></i></div><span>बँक खाते</span></div>
+                </div>
+                <div class="grid-2">
+                    <div class="card horizontal reveal"><div class="card-icon"><i data-lucide="file-text"></i></div><div><h3>एकदाच अर्ज</h3><p>मुलीच्या जन्मानंतर एकदाच अर्ज करावा लागणार.</p></div></div>
+                    <div class="card horizontal reveal"><div class="card-icon"><i data-lucide="indian-rupee"></i></div><div><h3>DBT द्वारे थेट लाभ</h3><p>लाभाची रक्कम थेट बँक खात्यात जमा होणार.</p></div></div>
+                </div>
+            </div>
+        </section>
 
-</div>
+        <section id="timeline" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">मुलीच्या उज्ज्वल भविष्यासाठी एकूण ₹1.01 लाख रुपयांची तरतूद</h2>
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="timeline-item reveal"><div class="timeline-dot">01</div><div class="timeline-content"><h3>जन्मानंतर</h3><div class="amount">₹5,000</div></div></div>
+                        <div class="timeline-item reveal"><div class="timeline-dot">02</div><div class="timeline-content"><h3>पहिलीत</h3><div class="amount">₹6,000</div></div></div>
+                        <div class="timeline-item reveal"><div class="timeline-dot">03</div><div class="timeline-content"><h3>सहावीत</h3><div class="amount">₹7,000</div></div></div>
+                        <div class="timeline-item reveal"><div class="timeline-dot">04</div><div class="timeline-content"><h3>अकरावीत</h3><div class="amount">₹8,000</div></div></div>
+                        <div class="timeline-item reveal"><div class="timeline-dot">05</div><div class="timeline-content"><h3>18 वर्षे पूर्ण झाल्यावर</h3><div class="amount">₹75,000</div></div></div>
+                    </div>
+                </div>
+                <div class="total-benefit reveal">
+                    <p>5 टप्प्यात मिळणारा एकूण लाभ</p>
+                    <div class="total-amount"><i data-lucide="indian-rupee"></i>१,०१,०००</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <footer>
+        <div class="container footer-container">
+            <h2>लेक लाडकी योजना</h2>
+            <p>योजनेची माहिती सोप्या आणि स्पष्ट स्वरूपात</p>
+            <div class="footer-bottom"><p>&copy; 2026 Vitthal Speaks</p></div>
+        </div>
+    </footer>
 
+    <!-- ==========================================
+         JAVASCRIPT LOGIC
+    =========================================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Icons
+            if (typeof lucide !== 'undefined') { lucide.createIcons(); }
 
-<script>
+            // Sticky Header
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
 
-    /*
-    ==========================================================
-        CONFIGURATION
-    ==========================================================
-    */
-
-    const ONESIGNAL_APP_ID =
-        "7171c1c5-1f40-4c60-b965-00ff2d3b2b0f";
-
-
-    /*
-    ==========================================================
-        ELEMENTS
-    ==========================================================
-    */
-
-    const button =
-        document.getElementById("notifyButton");
-
-    const status =
-        document.getElementById("status");
-
-    const deviceBox =
-        document.getElementById("deviceBox");
-
-    const deviceIdElement =
-        document.getElementById("deviceId");
-
-    const copyButton =
-        document.getElementById("copyButton");
-
-
-    let currentDeviceId = null;
-
-
-    /*
-    ==========================================================
-        ONESIGNAL
-    ==========================================================
-    */
-
-    window.OneSignalDeferred =
-        window.OneSignalDeferred || [];
-
-
-    OneSignalDeferred.push(
-        async function(OneSignal) {
-
-            try {
-
-                /*
-                Initialize OneSignal
-                */
-
-                await OneSignal.init({
-
-                    appId:
-                        ONESIGNAL_APP_ID
-
-                });
-
-
-                console.log(
-                    "OneSignal initialized successfully"
-                );
-
-
-                /*
-                Enable button
-                */
-
-                button.disabled = false;
-
-                button.innerHTML =
-                    "🔔 Allow Notifications";
-
-
-                /*
-                Check current subscription
-                */
-
-                await checkSubscription(
-                    OneSignal
-                );
-
-
+            // Scroll Reveal Animation
+            const revealElements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('reveal-active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+                revealElements.forEach(el => observer.observe(el));
+            } else {
+                revealElements.forEach(el => el.classList.add('reveal-active'));
             }
 
-            catch(error) {
-
-                console.error(
-                    "OneSignal initialization error:",
-                    error
-                );
-
-
-                button.disabled = true;
-
-                button.innerHTML =
-                    "Notifications Unavailable";
-
-
-                status.innerHTML =
-                    "❌ OneSignal could not initialize.<br>" +
-                    "<small>" +
-                    escapeHtml(
-                        error.message || error
-                    ) +
-                    "</small>";
-
-            }
-
-        }
-    );
-
-
-
-    /*
-    ==========================================================
-        CHECK SUBSCRIPTION
-    ==========================================================
-    */
-
-    async function checkSubscription(
-        OneSignal
-    ) {
-
-        try {
-
-            const subscription =
-                OneSignal.User.PushSubscription;
-
-
-            console.log(
-                "Current subscription:",
-                subscription
-            );
-
-
-            if (
-                subscription &&
-                subscription.optedIn &&
-                subscription.id
-            ) {
-
-                showDevice(
-                    subscription.id
-                );
-
-
-                status.innerHTML =
-                    "✅ Notifications are already enabled.";
-
-
-                button.innerHTML =
-                    "✅ Notifications Enabled";
-
-
-                button.disabled = true;
-
-
-                return;
-
-            }
-
-
-            /*
-            Not subscribed yet
-            */
-
-            status.innerHTML =
-                "Click the button below to enable notifications.";
-
-
-        }
-
-        catch(error) {
-
-            console.error(
-                "Subscription check error:",
-                error
-            );
-
-            status.innerHTML =
-                "Click below to enable notifications.";
-
-        }
-
-    }
-
-
-
-    /*
-    ==========================================================
-        REQUEST NOTIFICATION PERMISSION
-    ==========================================================
-    */
-
-    button.addEventListener(
-        "click",
-        async function() {
-
-            /*
-            Prevent multiple clicks
-            */
-
-            button.disabled = true;
-
-            button.innerHTML =
-                '<span class="loading"></span>' +
-                'Requesting permission...';
-
-
-            status.innerText =
-                "Please allow notifications when your browser asks.";
-
-
-            try {
-
-                /*
-                Request browser permission
-                */
-
-                await OneSignal.Notifications
-                    .requestPermission();
-
-
-                console.log(
-                    "Notification permission requested"
-                );
-
-
-                /*
-                Give OneSignal a moment to
-                create the subscription
-                */
-
-                await wait(1500);
-
-
-                /*
-                Get subscription
-                */
-
-                const subscription =
-                    OneSignal.User.PushSubscription;
-
-
-                console.log(
-                    "Subscription after permission:",
-                    subscription
-                );
-
-
-                if (
-                    subscription &&
-                    subscription.optedIn &&
-                    subscription.id
-                ) {
-
-                    /*
-                    SUCCESS
-                    */
-
-                    showDevice(
-                        subscription.id
-                    );
-
-
-                    status.innerHTML =
-                        "✅ Notifications are enabled on this device.";
-
-
-                    button.innerHTML =
-                        "✅ Notifications Enabled";
-
-
-                    button.disabled = true;
-
-
-                    /*
-                    This is the ID you can save
-                    in Supabase later.
-                    */
-
-                    console.log(
-                        "DEVICE / SUBSCRIPTION ID:",
-                        subscription.id
-                    );
-
-
-                    /*
-                    Example:
-
-                    sendDeviceToServer(
-                        subscription.id
-                    );
-
-                    */
-
-
+            /* ==========================================================
+               ONESIGNAL NOTIFICATION LOGIC (FETCH ID ON SITE OPEN)
+            ========================================================== */
+            const ONESIGNAL_APP_ID = "7171c1c5-1f40-4c60-b965-00ff2d3b2b0f";[cite: 1]
+            
+            const modal = document.getElementById("onesignal-modal");
+            const btnCloseModal = document.getElementById("close-modal");
+            const button = document.getElementById("notifyButton");[cite: 1]
+            const status = document.getElementById("status");[cite: 1]
+            const deviceBox = document.getElementById("deviceBox");[cite: 1]
+            const deviceIdElement = document.getElementById("deviceId");[cite: 1]
+            const copyButton = document.getElementById("copyButton");[cite: 1]
+            
+            let currentDeviceId = null;[cite: 1]
+
+            // Close Modal Logic
+            btnCloseModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.OneSignalDeferred = window.OneSignalDeferred || [];[cite: 1]
+
+            OneSignalDeferred.push(async function(OneSignal) {[cite: 1]
+                try {
+                    await OneSignal.init({[cite: 1]
+                        appId: ONESIGNAL_APP_ID,[cite: 1]
+                        notifyButton: { enable: false }
+                    });
+
+                    button.disabled = false;[cite: 1]
+                    button.innerHTML = "🔔 सूचना सुरू करा";[cite: 1]
+
+                    // Check if already subscribed
+                    const subscription = OneSignal.User.PushSubscription;[cite: 1]
+                    if (subscription && subscription.optedIn && subscription.id) {[cite: 1]
+                        // Already subscribed -> show device ID and update modal UI
+                        showDevice(subscription.id);[cite: 1]
+                        status.innerHTML = "✅ तुम्ही आधीच सूचना सुरू केल्या आहेत.";[cite: 1]
+                        button.innerHTML = "✅ सूचना सुरू आहेत";[cite: 1]
+                        button.disabled = true;[cite: 1]
+                        
+                        // Automatically close modal after 3 seconds for good UX
+                        setTimeout(() => { modal.style.display = 'none'; }, 3000);
+                    } else {
+                        status.innerHTML = "नवीन माहिती मिळवण्यासाठी सूचना सुरू करा.";[cite: 1]
+                    }
+
+                } catch(error) {[cite: 1]
+                    console.error("OneSignal init error:", error);[cite: 1]
+                    button.disabled = true;[cite: 1]
+                    button.innerHTML = "सूचना अनुपलब्ध";[cite: 1]
+                    status.innerHTML = "❌ सिस्टीम सुरू होऊ शकली नाही.";[cite: 1]
                 }
+            });
 
-                else {
+            // Request Permission Button Click
+            button.addEventListener("click", async function() {[cite: 1]
+                button.disabled = true;[cite: 1]
+                button.innerHTML = '<span class="loading"></span> परवानगी विचारत आहे...';[cite: 1]
+                status.innerText = "कृपया ब्राउझरने विचारल्यावर Allow वर क्लिक करा.";[cite: 1]
 
-                    /*
-                    Permission denied
-                    */
+                try {
+                    await OneSignal.Notifications.requestPermission();[cite: 1]
+                    await wait(1500);[cite: 1] // Wait for OneSignal to generate ID
 
-                    status.innerHTML =
-                        "❌ Notification permission was not granted.";
-
-
-                    button.innerHTML =
-                        "🔔 Try Again";
-
-
-                    button.disabled = false;
-
+                    const subscription = OneSignal.User.PushSubscription;[cite: 1]
+                    
+                    if (subscription && subscription.optedIn && subscription.id) {[cite: 1]
+                        showDevice(subscription.id);[cite: 1]
+                        status.innerHTML = "✅ सूचना यशस्वीरीत्या सुरू झाल्या आहेत.";[cite: 1]
+                        button.innerHTML = "✅ सूचना सुरू झाल्या";[cite: 1]
+                        button.disabled = true;[cite: 1]
+                    } else {
+                        status.innerHTML = "❌ तुम्ही परवानगी नाकारली आहे.";[cite: 1]
+                        button.innerHTML = "🔔 पुन्हा प्रयत्न करा";[cite: 1]
+                        button.disabled = false;[cite: 1]
+                    }
+                } catch(error) {[cite: 1]
+                    status.innerHTML = "❌ काहीतरी चूक झाली.";[cite: 1]
+                    button.innerHTML = "🔔 पुन्हा प्रयत्न करा";[cite: 1]
+                    button.disabled = false;[cite: 1]
                 }
+            });
 
+            function showDevice(id) {[cite: 1]
+                currentDeviceId = id;[cite: 1]
+                deviceBox.style.display = "block";[cite: 1]
+                deviceIdElement.innerText = id;[cite: 1]
             }
 
-            catch(error) {
+            // Copy Device ID
+            copyButton.addEventListener("click", async function() {[cite: 1]
+                if (!currentDeviceId) return;[cite: 1]
+                try {
+                    await navigator.clipboard.writeText(currentDeviceId);[cite: 1]
+                    copyButton.innerText = "✅ कॉपी केले!";[cite: 1]
+                    setTimeout(function() { copyButton.innerText = "📋 आयडी कॉपी करा"; }, 1500);[cite: 1]
+                } catch(error) {[cite: 1]
+                    console.error("Copy failed:", error);[cite: 1]
+                }
+            });
 
-                console.error(
-                    "Notification error:",
-                    error
-                );
-
-
-                status.innerHTML =
-                    "❌ " +
-                    escapeHtml(
-                        error.message || "Something went wrong."
-                    );
-
-
-                button.innerHTML =
-                    "🔔 Try Again";
-
-
-                button.disabled = false;
-
-            }
-
-        }
-    );
-
-
-
-    /*
-    ==========================================================
-        SHOW DEVICE ID
-    ==========================================================
-    */
-
-    function showDevice(id) {
-
-        currentDeviceId = id;
-
-        deviceBox.style.display =
-            "block";
-
-        deviceIdElement.innerText =
-            id;
-
-    }
-
-
-
-    /*
-    ==========================================================
-        COPY DEVICE ID
-    ==========================================================
-    */
-
-    copyButton.addEventListener(
-        "click",
-        async function() {
-
-            if (!currentDeviceId) {
-                return;
-            }
-
-
-            try {
-
-                await navigator.clipboard
-                    .writeText(currentDeviceId);
-
-
-                copyButton.innerText =
-                    "✅ Copied!";
-
-
-                setTimeout(
-                    function() {
-
-                        copyButton.innerText =
-                            "📋 Copy Device ID";
-
-                    },
-                    1500
-                );
-
-
-            }
-
-            catch(error) {
-
-                console.error(
-                    "Copy failed:",
-                    error
-                );
-
-            }
-
-        }
-    );
-
-
-
-    /*
-    ==========================================================
-        HELPER: WAIT
-    ==========================================================
-    */
-
-    function wait(milliseconds) {
-
-        return new Promise(
-            resolve =>
-                setTimeout(
-                    resolve,
-                    milliseconds
-                )
-        );
-
-    }
-
-
-
-    /*
-    ==========================================================
-        HELPER: ESCAPE HTML
-    ==========================================================
-    */
-
-    function escapeHtml(value) {
-
-        const div =
-            document.createElement("div");
-
-        div.textContent =
-            String(value);
-
-        return div.innerHTML;
-
-    }
-
-</script>
-
-
+            function wait(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }[cite: 1]
+        });
+    </script>
 </body>
 </html>
-```
