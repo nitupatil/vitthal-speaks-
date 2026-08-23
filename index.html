@@ -1,216 +1,870 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Enable Notifications</title>
 
-    <!-- OneSignal -->
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <!-- =====================================================
+         ONESIGNAL V16
+    ====================================================== -->
+    <script
+        src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+        defer>
+    </script>
+
 
     <style>
+
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
             min-height: 100vh;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+
+            padding: 20px;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #667eea 0%,
+                    #764ba2 100%
+                );
+
+            color: #ffffff;
         }
+
+
+        .container {
+            width: 100%;
+            max-width: 430px;
+        }
+
 
         .card {
-            width: 90%;
-            max-width: 420px;
-            padding: 35px;
-            text-align: center;
+
             background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 22px;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 20px 60px rgba(0,0,0,.25);
+
+            border: 1px solid rgba(255,255,255,0.22);
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            border-radius: 28px;
+
+            padding: 38px 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.25);
         }
 
-        .icon {
-            width: 75px;
-            height: 75px;
-            margin: auto auto 20px;
+
+        .notification-icon {
+
+            width: 82px;
+            height: 82px;
+
+            margin: 0 auto 24px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             border-radius: 50%;
-            background: white;
-            color: #667eea;
-            font-size: 35px;
+
+            background: #ffffff;
+
+            font-size: 38px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.15);
         }
+
 
         h1 {
-            margin-bottom: 10px;
+
+            font-size: 28px;
+
+            margin-bottom: 12px;
+
+            font-weight: 700;
         }
 
-        p {
-            opacity: .85;
-            line-height: 1.6;
+
+        .description {
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            color: rgba(255,255,255,0.82);
+
+            margin-bottom: 28px;
         }
 
-        button {
+
+        #notifyButton {
+
             width: 100%;
-            margin-top: 20px;
-            padding: 15px;
-            border: 0;
-            border-radius: 12px;
-            background: white;
-            color: #5b4bc4;
+
+            border: none;
+
+            border-radius: 14px;
+
+            padding: 16px 20px;
+
+            background: #ffffff;
+
+            color: #5d4ac7;
+
             font-size: 16px;
-            font-weight: bold;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                opacity 0.2s ease;
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.18);
+        }
+
+
+        #notifyButton:hover:not(:disabled) {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 15px 30px rgba(0,0,0,0.25);
+        }
+
+
+        #notifyButton:active:not(:disabled) {
+
+            transform: translateY(0);
+        }
+
+
+        #notifyButton:disabled {
+
+            opacity: 0.6;
+
+            cursor: not-allowed;
+        }
+
+
+        #status {
+
+            margin-top: 20px;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            color: rgba(255,255,255,0.9);
+        }
+
+
+        .device-box {
+
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 16px;
+
+            text-align: left;
+
+            border-radius: 14px;
+
+            background: rgba(0,0,0,0.18);
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+        }
+
+
+        .device-title {
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.8px;
+
+            color: rgba(255,255,255,0.65);
+
+            margin-bottom: 8px;
+        }
+
+
+        #deviceId {
+
+            font-size: 12px;
+
+            line-height: 1.5;
+
+            word-break: break-all;
+
+            color: #ffffff;
+
+            margin-bottom: 12px;
+        }
+
+
+        #copyButton {
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 10px;
+
+            padding: 11px;
+
+            background: rgba(255,255,255,0.15);
+
+            color: #ffffff;
+
+            font-size: 13px;
+
             cursor: pointer;
         }
 
-        button:hover {
-            transform: translateY(-1px);
+
+        #copyButton:hover {
+
+            background:
+                rgba(255,255,255,0.22);
         }
 
-        #status {
-            margin-top: 18px;
-            font-size: 14px;
-            word-break: break-word;
+
+        .loading {
+
+            display: inline-block;
+
+            width: 15px;
+            height: 15px;
+
+            margin-right: 7px;
+
+            vertical-align: -2px;
+
+            border:
+                2px solid rgba(255,255,255,0.3);
+
+            border-top-color: #ffffff;
+
+            border-radius: 50%;
+
+            animation:
+                spin 0.8s linear infinite;
         }
 
-        #deviceId {
-            margin-top: 12px;
-            padding: 10px;
-            background: rgba(0,0,0,.2);
-            border-radius: 8px;
-            font-size: 12px;
-            display: none;
-            word-break: break-all;
+
+        @keyframes spin {
+
+            to {
+                transform: rotate(360deg);
+            }
         }
+
+
+        .footer {
+
+            margin-top: 22px;
+
+            font-size: 11px;
+
+            color:
+                rgba(255,255,255,0.55);
+
+            text-align: center;
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<div class="card">
 
-    <div class="icon">🔔</div>
+<div class="container">
 
-    <h1>Stay Updated</h1>
+    <div class="card">
 
-    <p>
-        Enable notifications to receive important updates
-        directly on this device.
-    </p>
 
-    <button id="notifyButton">
-        🔔 Enable Notifications
-    </button>
+        <!-- Notification icon -->
 
-    <div id="status">
-        Notifications are currently disabled.
+        <div class="notification-icon">
+            🔔
+        </div>
+
+
+        <h1>
+            Stay Updated
+        </h1>
+
+
+        <p class="description">
+
+            Enable notifications on this device
+            to receive important updates and
+            messages directly in your browser.
+
+        </p>
+
+
+        <!-- Notification button -->
+
+        <button
+            id="notifyButton"
+            type="button"
+            disabled>
+
+            Loading...
+
+        </button>
+
+
+        <!-- Status -->
+
+        <div id="status">
+
+            <span class="loading"></span>
+            Initializing notifications...
+
+        </div>
+
+
+        <!-- Device ID -->
+
+        <div
+            class="device-box"
+            id="deviceBox">
+
+            <div class="device-title">
+                OneSignal Subscription ID
+            </div>
+
+            <div id="deviceId"></div>
+
+            <button
+                id="copyButton"
+                type="button">
+
+                📋 Copy Device ID
+
+            </button>
+
+        </div>
+
+
     </div>
 
-    <div id="deviceId"></div>
+
+    <div class="footer">
+
+        Secure browser notifications powered by OneSignal
+
+    </div>
 
 </div>
 
 
+
 <script>
-window.OneSignalDeferred = window.OneSignalDeferred || [];
 
-OneSignalDeferred.push(async function(OneSignal) {
+    /*
+    ==========================================================
+        CONFIGURATION
+    ==========================================================
+    */
 
-    await OneSignal.init({
-        appId: "7171c1c5-1f40-4c60-b965-00ff2d3b2b0f",
-
-        allowLocalhostAsSecureOrigin: true,
-
-        notifyButton: {
-            enable: false
-        }
-    });
-
-
-    const button = document.getElementById("notifyButton");
-    const status = document.getElementById("status");
-    const deviceIdBox = document.getElementById("deviceId");
-
-
-    async function updateDeviceInfo() {
-
-        const optedIn = OneSignal.User.PushSubscription.optedIn;
-
-        const subscriptionId =
-            OneSignal.User.PushSubscription.id;
-
-
-        if (optedIn && subscriptionId) {
-
-            status.innerHTML =
-                "✅ Notifications are enabled on this device.";
-
-            deviceIdBox.style.display = "block";
-
-            deviceIdBox.innerHTML =
-                "Subscription ID:<br><br>" +
-                subscriptionId;
-
-            console.log("OneSignal Subscription ID:", subscriptionId);
-
-            /*
-             * SEND THIS ID TO YOUR SERVER / SUPABASE
-             *
-             * Example:
-             *
-             * fetch("/save-device", {
-             *     method: "POST",
-             *     headers: {
-             *         "Content-Type": "application/json"
-             *     },
-             *     body: JSON.stringify({
-             *         subscription_id: subscriptionId
-             *     })
-             * });
-             */
-        }
-    }
-
-
-    button.addEventListener("click", async function() {
-
-        try {
-
-            status.innerHTML =
-                "Requesting notification permission...";
-
-            await OneSignal.User.PushSubscription.optIn();
-
-            await updateDeviceInfo();
-
-        } catch (error) {
-
-            console.error(error);
-
-            status.innerHTML =
-                "❌ Notification permission was not granted.";
-
-        }
-
-    });
+    const ONESIGNAL_APP_ID =
+        "7171c1c5-1f40-4c60-b965-00ff2d3b2b0f";
 
 
     /*
-     * Check existing permission
-     */
-    await updateDeviceInfo();
+    ==========================================================
+        ELEMENTS
+    ==========================================================
+    */
 
-});
+    const button =
+        document.getElementById("notifyButton");
+
+    const status =
+        document.getElementById("status");
+
+    const deviceBox =
+        document.getElementById("deviceBox");
+
+    const deviceIdElement =
+        document.getElementById("deviceId");
+
+    const copyButton =
+        document.getElementById("copyButton");
+
+
+    let currentDeviceId = null;
+
+
+    /*
+    ==========================================================
+        ONESIGNAL
+    ==========================================================
+    */
+
+    window.OneSignalDeferred =
+        window.OneSignalDeferred || [];
+
+
+    OneSignalDeferred.push(
+        async function(OneSignal) {
+
+            try {
+
+                /*
+                Initialize OneSignal
+                */
+
+                await OneSignal.init({
+
+                    appId:
+                        ONESIGNAL_APP_ID
+
+                });
+
+
+                console.log(
+                    "OneSignal initialized successfully"
+                );
+
+
+                /*
+                Enable button
+                */
+
+                button.disabled = false;
+
+                button.innerHTML =
+                    "🔔 Allow Notifications";
+
+
+                /*
+                Check current subscription
+                */
+
+                await checkSubscription(
+                    OneSignal
+                );
+
+
+            }
+
+            catch(error) {
+
+                console.error(
+                    "OneSignal initialization error:",
+                    error
+                );
+
+
+                button.disabled = true;
+
+                button.innerHTML =
+                    "Notifications Unavailable";
+
+
+                status.innerHTML =
+                    "❌ OneSignal could not initialize.<br>" +
+                    "<small>" +
+                    escapeHtml(
+                        error.message || error
+                    ) +
+                    "</small>";
+
+            }
+
+        }
+    );
+
+
+
+    /*
+    ==========================================================
+        CHECK SUBSCRIPTION
+    ==========================================================
+    */
+
+    async function checkSubscription(
+        OneSignal
+    ) {
+
+        try {
+
+            const subscription =
+                OneSignal.User.PushSubscription;
+
+
+            console.log(
+                "Current subscription:",
+                subscription
+            );
+
+
+            if (
+                subscription &&
+                subscription.optedIn &&
+                subscription.id
+            ) {
+
+                showDevice(
+                    subscription.id
+                );
+
+
+                status.innerHTML =
+                    "✅ Notifications are already enabled.";
+
+
+                button.innerHTML =
+                    "✅ Notifications Enabled";
+
+
+                button.disabled = true;
+
+
+                return;
+
+            }
+
+
+            /*
+            Not subscribed yet
+            */
+
+            status.innerHTML =
+                "Click the button below to enable notifications.";
+
+
+        }
+
+        catch(error) {
+
+            console.error(
+                "Subscription check error:",
+                error
+            );
+
+            status.innerHTML =
+                "Click below to enable notifications.";
+
+        }
+
+    }
+
+
+
+    /*
+    ==========================================================
+        REQUEST NOTIFICATION PERMISSION
+    ==========================================================
+    */
+
+    button.addEventListener(
+        "click",
+        async function() {
+
+            /*
+            Prevent multiple clicks
+            */
+
+            button.disabled = true;
+
+            button.innerHTML =
+                '<span class="loading"></span>' +
+                'Requesting permission...';
+
+
+            status.innerText =
+                "Please allow notifications when your browser asks.";
+
+
+            try {
+
+                /*
+                Request browser permission
+                */
+
+                await OneSignal.Notifications
+                    .requestPermission();
+
+
+                console.log(
+                    "Notification permission requested"
+                );
+
+
+                /*
+                Give OneSignal a moment to
+                create the subscription
+                */
+
+                await wait(1500);
+
+
+                /*
+                Get subscription
+                */
+
+                const subscription =
+                    OneSignal.User.PushSubscription;
+
+
+                console.log(
+                    "Subscription after permission:",
+                    subscription
+                );
+
+
+                if (
+                    subscription &&
+                    subscription.optedIn &&
+                    subscription.id
+                ) {
+
+                    /*
+                    SUCCESS
+                    */
+
+                    showDevice(
+                        subscription.id
+                    );
+
+
+                    status.innerHTML =
+                        "✅ Notifications are enabled on this device.";
+
+
+                    button.innerHTML =
+                        "✅ Notifications Enabled";
+
+
+                    button.disabled = true;
+
+
+                    /*
+                    This is the ID you can save
+                    in Supabase later.
+                    */
+
+                    console.log(
+                        "DEVICE / SUBSCRIPTION ID:",
+                        subscription.id
+                    );
+
+
+                    /*
+                    Example:
+
+                    sendDeviceToServer(
+                        subscription.id
+                    );
+
+                    */
+
+
+                }
+
+                else {
+
+                    /*
+                    Permission denied
+                    */
+
+                    status.innerHTML =
+                        "❌ Notification permission was not granted.";
+
+
+                    button.innerHTML =
+                        "🔔 Try Again";
+
+
+                    button.disabled = false;
+
+                }
+
+            }
+
+            catch(error) {
+
+                console.error(
+                    "Notification error:",
+                    error
+                );
+
+
+                status.innerHTML =
+                    "❌ " +
+                    escapeHtml(
+                        error.message || "Something went wrong."
+                    );
+
+
+                button.innerHTML =
+                    "🔔 Try Again";
+
+
+                button.disabled = false;
+
+            }
+
+        }
+    );
+
+
+
+    /*
+    ==========================================================
+        SHOW DEVICE ID
+    ==========================================================
+    */
+
+    function showDevice(id) {
+
+        currentDeviceId = id;
+
+        deviceBox.style.display =
+            "block";
+
+        deviceIdElement.innerText =
+            id;
+
+    }
+
+
+
+    /*
+    ==========================================================
+        COPY DEVICE ID
+    ==========================================================
+    */
+
+    copyButton.addEventListener(
+        "click",
+        async function() {
+
+            if (!currentDeviceId) {
+                return;
+            }
+
+
+            try {
+
+                await navigator.clipboard
+                    .writeText(currentDeviceId);
+
+
+                copyButton.innerText =
+                    "✅ Copied!";
+
+
+                setTimeout(
+                    function() {
+
+                        copyButton.innerText =
+                            "📋 Copy Device ID";
+
+                    },
+                    1500
+                );
+
+
+            }
+
+            catch(error) {
+
+                console.error(
+                    "Copy failed:",
+                    error
+                );
+
+            }
+
+        }
+    );
+
+
+
+    /*
+    ==========================================================
+        HELPER: WAIT
+    ==========================================================
+    */
+
+    function wait(milliseconds) {
+
+        return new Promise(
+            resolve =>
+                setTimeout(
+                    resolve,
+                    milliseconds
+                )
+        );
+
+    }
+
+
+
+    /*
+    ==========================================================
+        HELPER: ESCAPE HTML
+    ==========================================================
+    */
+
+    function escapeHtml(value) {
+
+        const div =
+            document.createElement("div");
+
+        div.textContent =
+            String(value);
+
+        return div.innerHTML;
+
+    }
+
 </script>
+
 
 </body>
 </html>
+```
