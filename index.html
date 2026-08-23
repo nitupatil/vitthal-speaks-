@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>लेक लाडकी योजना | अर्ज प्रक्रिया, लाभ, पात्रता आणि महत्त्वाची माहिती</title>
+    <meta name="description" content="लेक लाडकी योजनेचा लाभ मिळवणे आता झाले आणखी सुलभ. अर्ज प्रक्रिया, लाभाचे टप्पे, पात्रता आणि महत्त्वाची मुदत यांची संपूर्ण माहिती.">
+    <link rel="canonical" href="https://www.vitthalspeaks.com/">
     
-    <!-- Google Fonts -->
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="लेक लाडकी योजना | अर्ज प्रक्रिया, लाभ, पात्रता">
+    <meta property="og:description" content="अर्ज प्रक्रिया झाली आणखी सोपी, जलद आणि पारदर्शक. ₹1.01 लाखांचा एकूण लाभ.">
+    <meta property="og:url" content="https://www.vitthalspeaks.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts: Noto Sans Devanagari -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,7 +23,7 @@
 
     <style>
         /* =========================================
-           SITE COLOR PALETTE & VARIABLES
+           COLOR PALETTE & VARIABLES
         ========================================= */
         :root {
             --bg-cream: #FFF7EF;
@@ -27,6 +35,8 @@
             --pink: #E91E63;
             --pink-soft: #F6C5D4;
             --peach: #F8D9C8;
+            --gold: #F59E0B;
+            --whatsapp-green: #25D366;
             --text-dark: #1F2937;
             --text-muted: #4B5563;
             --shadow-soft: 0 10px 30px rgba(91, 22, 140, 0.08);
@@ -34,6 +44,9 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* =========================================
+           RESET & BASE
+        ========================================= */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html { scroll-behavior: smooth; font-family: 'Noto Sans Devanagari', sans-serif; color: var(--text-dark); background-color: var(--bg-cream); overflow-x: hidden; }
@@ -49,7 +62,15 @@
         h3 { font-size: 1.25rem; font-weight: 600; color: var(--magenta); }
         p { color: var(--text-muted); font-size: 1.05rem; }
 
-        /* Header */
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 28px; border-radius: 50px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: var(--transition); border: none; }
+        .btn-gradient { background: linear-gradient(135deg, var(--purple-bright), var(--magenta)); color: var(--white); }
+        .btn-gradient:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+        .btn-primary { background-color: var(--purple-deep); color: var(--white); }
+
+        /* =========================================
+           HEADER & NAV
+        ========================================= */
         header { position: fixed; top: 0; width: 100%; z-index: 1000; transition: var(--transition); background-color: transparent; }
         header.scrolled { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); }
         .header-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
@@ -57,38 +78,58 @@
         .nav-menu ul { display: flex; gap: 32px; }
         .nav-menu a { font-weight: 500; color: var(--text-dark); transition: var(--transition); }
         .nav-menu a:hover { color: var(--magenta); }
+        .header-actions { display: flex; align-items: center; gap: 16px; }
         .hamburger { display: none; background: none; border: none; color: var(--purple-deep); cursor: pointer; }
 
-        /* Layout & Sections */
+        /* =========================================
+           LAYOUT & SECTIONS
+        ========================================= */
         .section { padding: 80px 0; }
         .section-alt { background-color: var(--bg-peach); border-radius: 40px; margin: 20px 0; }
         .section-title { margin-bottom: 40px; }
         .section-highlight { text-align: center; font-size: 1.25rem; color: var(--magenta); font-weight: 600; margin: -20px 0 40px; }
+        
         .grid-4 { display: grid; gap: 24px; grid-template-columns: repeat(4, 1fr); }
         .grid-3 { display: grid; gap: 24px; grid-template-columns: repeat(3, 1fr); }
         .grid-2 { display: grid; gap: 24px; grid-template-columns: repeat(2, 1fr); }
 
-        /* Hero */
+        /* =========================================
+           HERO SECTION
+        ========================================= */
         .hero { padding: 160px 0 100px; position: relative; overflow: hidden; background: linear-gradient(to bottom, var(--bg-cream), var(--bg-peach)); }
         .hero-container { display: flex; align-items: center; gap: 40px; position: relative; z-index: 2; }
         .hero-content { flex: 1; }
         .hero-content h1 { font-size: 3rem; margin-bottom: 24px; background: linear-gradient(135deg, var(--purple-deep), var(--magenta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content .subtitle { font-size: 1.25rem; margin-bottom: 32px; color: var(--text-dark); }
         .hero-visual { flex: 1; display: flex; justify-content: center; }
         .hero-svg { width: 100%; max-width: 400px; height: auto; }
 
-        /* Cards */
+        .deco { position: absolute; z-index: 1; }
+        .blob-1 { top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, var(--pink-soft) 0%, rgba(255,255,255,0) 70%); opacity: 0.5; }
+        .blob-2 { bottom: 0; left: -50px; width: 300px; height: 300px; background: radial-gradient(circle, var(--peach) 0%, rgba(255,255,255,0) 70%); }
+        .leaf-1 { top: 20%; left: 5%; }
+        .leaf-2 { bottom: 20%; right: 10%; }
+
+        /* =========================================
+           CARDS
+        ========================================= */
         .card { background: var(--white); padding: 32px 24px; border-radius: 24px; box-shadow: var(--shadow-soft); position: relative; transition: var(--transition); border: 1px solid rgba(91, 22, 140, 0.05); }
         .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--pink-soft); }
         .card-icon-wrap { width: 56px; height: 56px; background: var(--bg-peach); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--magenta); margin-bottom: 20px; }
         .card-badge { position: absolute; top: 24px; right: 24px; font-size: 2rem; font-weight: 800; color: var(--bg-peach); opacity: 0.8; }
+        
         .card.horizontal { display: flex; align-items: center; gap: 20px; padding: 24px; }
         .card-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-bright), var(--magenta)); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
-        /* Flow & Timeline */
+        /* =========================================
+           DBT FLOW & TIMELINE
+        ========================================= */
         .flow-visual { display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 56px; flex-wrap: wrap; }
         .flow-item { display: flex; flex-direction: column; align-items: center; gap: 12px; font-weight: 600; }
         .flow-icon { width: 80px; height: 80px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-soft); color: var(--purple-deep); border: 2px dashed var(--pink-soft); }
         .flow-item.highlight .flow-icon { background: var(--magenta); color: var(--white); border: none; transform: scale(1.1); }
+        .flow-arrow { color: var(--magenta); opacity: 0.5; }
+
         .timeline-container { max-width: 600px; margin: 0 auto; padding: 20px 0; }
         .timeline { position: relative; }
         .timeline::before { content: ''; position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--purple-bright), var(--pink)); }
@@ -96,76 +137,103 @@
         .timeline-dot { width: 50px; height: 50px; background: var(--white); border: 2px solid var(--magenta); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--magenta); z-index: 2; flex-shrink: 0; margin-right: 24px; }
         .timeline-content { background: var(--white); padding: 16px 24px; border-radius: 16px; box-shadow: var(--shadow-soft); flex: 1; display: flex; justify-content: space-between; align-items: center; }
         .amount { font-size: 1.25rem; font-weight: 700; color: var(--purple-deep); }
+        
         .total-benefit { background: linear-gradient(135deg, var(--purple-deep), var(--magenta)); color: var(--white); text-align: center; padding: 40px; border-radius: 32px; max-width: 600px; margin: 40px auto 0; box-shadow: var(--shadow-hover); }
+        .total-benefit p { color: var(--pink-soft); margin-bottom: 8px; font-size: 1.2rem;}
         .total-amount { font-size: 3rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
-        /* Footer */
+        /* =========================================
+           ELIGIBILITY, STATS & FAQ
+        ========================================= */
+        .eligibility-box { background: var(--white); padding: 40px; border-radius: 24px; box-shadow: var(--shadow-soft); max-width: 700px; margin: 0 auto; border-top: 5px solid var(--magenta); }
+        .eligibility-list li { display: flex; align-items: center; gap: 16px; font-size: 1.1rem; padding: 16px 0; border-bottom: 1px solid var(--bg-peach); }
+        .eligibility-list li:last-child { border-bottom: none; }
+        .eligibility-list i { color: var(--purple-bright); }
+
+        .stat-card { text-align: center; padding: 32px 20px; background: var(--white); border-radius: 24px; box-shadow: var(--shadow-soft); }
+        .stat-val { font-size: 2.5rem; font-weight: 800; color: var(--magenta); margin-bottom: 8px; }
+        .stat-label { font-weight: 600; color: var(--text-dark); }
+
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--white); border-radius: 16px; margin-bottom: 16px; box-shadow: var(--shadow-soft); overflow: hidden; }
+        .faq-question { width: 100%; padding: 24px; display: flex; justify-content: space-between; align-items: center; background: none; border: none; font-size: 1.1rem; font-weight: 600; color: var(--text-dark); cursor: pointer; text-align: left; font-family: inherit; }
+        .faq-question i { transition: transform 0.3s ease; color: var(--magenta); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-item.active .faq-question { color: var(--purple-deep); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; padding: 0 24px; }
+        .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 24px; }
+
+        /* =========================================
+           WHATSAPP SHARE BUTTON (FLOATING)
+        ========================================= */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+        }
+        .whatsapp-float svg { width: 34px; height: 34px; fill: white; }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
         footer { background: var(--purple-deep); color: var(--white); padding: 60px 0 20px; text-align: center; }
         footer h2 { color: var(--white); margin-bottom: 8px; }
         footer p { color: var(--pink-soft); }
         .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); font-size: 0.9rem; }
 
-        /* Animations */
+        /* =========================================
+           ANIMATIONS & REVEAL
+        ========================================= */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
         .reveal.reveal-active { opacity: 1; transform: translateY(0); }
 
         /* =========================================
-           ONESIGNAL POPUP MODAL (FIXED & ROBUST)
+           ONESIGNAL POPUP MODAL (DIRECT HIDE ON SUCCESS)
         ========================================= */
         .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(5px);
-            display: flex; align-items: center; justify-content: center;
-            z-index: 9999;
-            padding: 20px;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);
+            display: none; /* Initially hidden, JS will show if needed */
+            align-items: center; justify-content: center;
+            z-index: 9999; padding: 20px;
         }
-
         .modal-card {
             background: linear-gradient(135deg, var(--purple-deep) 0%, var(--magenta) 100%);
-            border-radius: 28px;
-            padding: 38px 30px;
-            text-align: center;
-            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
-            width: 100%;
-            max-width: 430px;
-            color: #ffffff;
-            position: relative;
+            border-radius: 28px; padding: 38px 30px; text-align: center;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4); width: 100%; max-width: 430px;
+            color: #ffffff; position: relative;
         }
-
-        /* Improved Close Button for guaranteed clicking */
         .modal-close-btn {
-            position: absolute;
-            top: 15px; right: 20px;
-            background: rgba(255,255,255,0.2);
-            border: 2px solid rgba(255,255,255,0.4);
-            color: white;
-            font-size: 1.8rem;
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            z-index: 10000; /* Ensures it is always on top */
-            transition: background 0.3s ease;
+            position: absolute; top: -15px; right: -15px; background: #ffffff; color: var(--purple-deep);
+            font-size: 1.8rem; line-height: 1; width: 44px; height: 44px; border-radius: 50%;
+            border: 3px solid var(--purple-deep); cursor: pointer; display: flex; align-items: center; justify-content: center;
+            z-index: 10000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: transform 0.2s;
         }
-        .modal-close-btn:hover {
-            background: rgba(255,255,255,0.4);
-        }
-
+        .modal-close-btn:active { transform: scale(0.9); }
         .modal-card .notification-icon {
-            width: 82px; height: 82px;
-            margin: 0 auto 24px;
-            display: flex; align-items: center; justify-content: center;
-            border-radius: 50%;
-            background: #ffffff;
-            font-size: 38px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            width: 82px; height: 82px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; background: #ffffff; font-size: 38px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
-
         .modal-card h2 { color: #ffffff; font-size: 24px; margin-bottom: 12px; font-weight: 700; }
         .modal-card .description { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.9); margin-bottom: 28px; }
-
+        
         #notifyButton {
             width: 100%; border: none; border-radius: 14px; padding: 16px 20px;
             background: #ffffff; color: var(--purple-deep); font-size: 16px; font-weight: 700;
@@ -174,61 +242,65 @@
         }
         #notifyButton:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(0,0,0,0.25); }
         #notifyButton:disabled { opacity: 0.6; cursor: not-allowed; }
+        #status { margin-top: 20px; font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 600;}
 
-        #status { margin-top: 20px; font-size: 14px; color: rgba(255,255,255,0.9); }
-
-        .device-box {
-            display: none; margin-top: 20px; padding: 16px; text-align: left; border-radius: 14px;
-            background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.2);
-        }
-        .device-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
-        #deviceId { font-size: 13px; word-break: break-all; color: #ffffff; margin-bottom: 12px; font-weight: 600;}
-
-        #copyButton { width: 100%; border: none; border-radius: 10px; padding: 11px; background: rgba(255,255,255,0.2); color: #ffffff; font-size: 13px; cursor: pointer; }
-        #copyButton:hover { background: rgba(255,255,255,0.3); }
-
-        .loading { display: inline-block; width: 15px; height: 15px; margin-right: 7px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #ffffff; border-radius: 50%; animation: spin 0.8s linear infinite; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        @media (max-width: 768px) {
+        /* =========================================
+           RESPONSIVE DESIGN (MOBILE FIRST FOCUS)
+        ========================================= */
+        @media (max-width: 1024px) {
             .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+        @media (max-width: 768px) {
             .grid-3, .grid-2 { grid-template-columns: 1fr; }
             .hero-container { flex-direction: column; text-align: center; }
-            .hero-content h1 { font-size: 2rem; }
-            .nav-menu { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            
+            .nav-menu {
+                position: absolute; top: 80px; left: 0; width: 100%; background: var(--white);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05); padding: 20px; flex-direction: column;
+                transform: translateY(-150%); opacity: 0; transition: var(--transition); z-index: 999;
+            }
+            .nav-menu.active { transform: translateY(0); opacity: 1; }
+            .nav-menu ul { flex-direction: column; gap: 20px; text-align: center; }
+            .desktop-btn { display: none; }
             .hamburger { display: block; }
+            
+            .flow-visual { flex-direction: column; }
+            .flow-arrow { transform: rotate(90deg); margin: 10px 0;}
+            .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
         }
         @media (max-width: 430px) {
+            .section { padding: 50px 0; }
             .grid-4 { grid-template-columns: 1fr; }
             .hero-content h1 { font-size: 1.8rem; }
+            .timeline-container { padding-left: 10px; }
+            .timeline-dot { width: 40px; height: 40px; margin-right: 15px; }
+            .total-amount { font-size: 2.2rem; }
+            .total-benefit { padding: 30px 20px; }
         }
     </style>
 </head>
 <body>
 
     <!-- ==========================================
-         ONESIGNAL POPUP MODAL (ON SITE OPEN)
+         ONESIGNAL POPUP MODAL
     =========================================== -->
     <div id="onesignal-modal" class="modal-overlay">
         <div class="modal-card">
+            <!-- X Button for instant dismiss -->
             <button id="close-modal" class="modal-close-btn" aria-label="Close">&times;</button>
             <div class="notification-icon">🔔</div>
             <h2>शासकीय योजनांची माहिती</h2>
             <p class="description">
-                अशाच प्रकारच्या नवनवीन शासकीय योजनांची माहिती आणि महत्त्वाचे अपडेट्स थेट मिळवण्यासाठी खालील बटणावर क्लिक करून सूचना सुरू करा.
+                अशाच प्रकारच्या शासकीय योजनांची माहिती मिळवण्यासाठी खाली क्लिक करा आणि महत्त्वाचे अपडेट्स थेट मोबाईलवर मिळवा.
             </p>
             
-            <button id="notifyButton" type="button" disabled>
-                <span class="loading"></span> प्रतीक्षेत...
+            <button id="notifyButton" type="button">
+                🔔 सूचना सुरू करा
             </button>
             
-            <div id="status">प्रणाली सुरू करत आहे...</div>
-
-            <div class="device-box" id="deviceBox">
-                <div class="device-title">OneSignal Subscription ID</div>
-                <div id="deviceId"></div>
-                <button id="copyButton" type="button">📋 आयडी कॉपी करा</button>
-            </div>
+            <div id="status"></div>
         </div>
     </div>
 
@@ -243,22 +315,33 @@
                     <li><a href="#application">अर्ज प्रक्रिया</a></li>
                     <li><a href="#benefits">लाभ</a></li>
                     <li><a href="#timeline">टप्पे</a></li>
+                    <li><a href="#eligibility">पात्रता</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <button class="hamburger" id="hamburger"><i data-lucide="menu"></i></button>
+                <a href="#application" class="btn btn-gradient desktop-btn">अर्ज प्रक्रिया जाणून घ्या</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu"><i data-lucide="menu"></i></button>
             </div>
         </div>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero">
+            <div class="deco blob-1"></div>
+            <div class="deco blob-2"></div>
+            <svg class="deco leaf-1" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.2;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 12 12"/></svg>
+            <svg class="deco leaf-2" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--purple-bright)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.15;"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 12 12"/></svg>
+            
             <div class="container hero-container">
                 <div class="hero-content reveal">
                     <h1>लेक लाडकी योजनेचा लाभ मिळवणे आता झाले आणखी सुलभ</h1>
-                    <p class="subtitle">अर्ज प्रक्रियेत नेमकं काय बदललं? योजनेची संपूर्ण माहिती थेट खालीलप्रमाणे.</p>
+                    <p class="subtitle">अर्ज प्रक्रियेत नेमकं काय बदललं? जाणून घेऊया!</p>
+                    <a href="#application" class="btn btn-primary btn-large">अर्ज प्रक्रिया जाणून घ्या <i data-lucide="arrow-right"></i></a>
                 </div>
+                
                 <div class="hero-visual reveal">
+                    <!-- Generic Abstract Mother & Daughter Illustration -->
                     <svg viewBox="0 0 400 400" class="hero-svg">
                         <circle cx="200" cy="200" r="180" fill="var(--peach)" opacity="0.4" />
                         <circle cx="200" cy="200" r="140" fill="var(--pink-soft)" opacity="0.6" />
@@ -266,26 +349,32 @@
                         <circle cx="240" cy="150" r="35" fill="var(--purple-deep)" opacity="0.9" />
                         <path d="M80,320 C80,260 110,230 160,230 C200,230 220,260 220,320" fill="var(--magenta)" />
                         <circle cx="150" cy="180" r="25" fill="var(--magenta)" />
+                        <circle cx="200" cy="200" r="195" fill="none" stroke="var(--pink)" stroke-width="2" stroke-dasharray="8 8" opacity="0.5" />
                     </svg>
                 </div>
             </div>
         </section>
 
+        <!-- Application Process -->
         <section id="application" class="section">
             <div class="container">
                 <h2 class="section-title reveal">अर्ज प्रक्रिया झाली आणखी सोपी, जलद आणि पारदर्शक</h2>
+                
                 <div class="grid-4">
                     <div class="card reveal"><div class="card-icon-wrap"><i data-lucide="laptop"></i></div><span class="card-badge">01</span><h3>ऑनलाइन अर्ज</h3><p>आपले सरकार पोर्टलवरून थेट ऑनलाइन अर्ज करता येणार.</p></div>
                     <div class="card reveal" style="transition-delay: 0.1s;"><div class="card-icon-wrap"><i data-lucide="download"></i></div><span class="card-badge">02</span><h3>कागदपत्रे कमी</h3><p>अर्ज भरण्यासाठी आवश्यक कागदपत्रांची संख्या कमी होणार.</p></div>
                     <div class="card reveal" style="transition-delay: 0.2s;"><div class="card-icon-wrap"><i data-lucide="user-check"></i></div><span class="card-badge">03</span><h3>माहिती ऑटो-फेच</h3><p>आधार क्रमांकाच्या आधारे माहिती ऑटो-फेच केली जाणार.</p></div>
                     <div class="card reveal" style="transition-delay: 0.3s;"><div class="card-icon-wrap"><i data-lucide="shield-check"></i></div><span class="card-badge">04</span><h3>e-KYC</h3><p>लाभार्थी मुलगी, तिचे माता-पिता यांची e-KYC करण्यात येणार.</p></div>
                 </div>
+                <p class="section-highlight reveal" style="margin-top: 40px;">सोपी, वेगवान आणि विश्वासार्ह अर्ज प्रक्रिया प्रत्येक लाडक्या लेकीसाठी</p>
             </div>
         </section>
 
+        <!-- Direct Benefits -->
         <section id="benefits" class="section section-alt">
             <div class="container">
                 <h2 class="section-title reveal">योजनेच्या लाभाची रक्कम थेट लाभार्थ्यांच्या खात्यात</h2>
+                
                 <div class="flow-visual reveal">
                     <div class="flow-item"><div class="flow-icon"><i data-lucide="baby"></i></div><span>मुलगी</span></div>
                     <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
@@ -293,16 +382,21 @@
                     <div class="flow-arrow"><i data-lucide="arrow-right"></i></div>
                     <div class="flow-item"><div class="flow-icon"><i data-lucide="landmark"></i></div><span>बँक खाते</span></div>
                 </div>
+
                 <div class="grid-2">
                     <div class="card horizontal reveal"><div class="card-icon"><i data-lucide="file-text"></i></div><div><h3>एकदाच अर्ज</h3><p>मुलीच्या जन्मानंतर एकदाच अर्ज करावा लागणार.</p></div></div>
-                    <div class="card horizontal reveal"><div class="card-icon"><i data-lucide="indian-rupee"></i></div><div><h3>DBT द्वारे थेट लाभ</h3><p>लाभाची रक्कम थेट बँक खात्यात जमा होणार.</p></div></div>
+                    <div class="card horizontal reveal"><div class="card-icon"><i data-lucide="indian-rupee"></i></div><div><h3>DBT द्वारे थेट लाभ</h3><p>लाभाची रक्कम DBT द्वारे थेट बँक खात्यात जमा होणार.</p></div></div>
+                    <div class="card horizontal reveal"><div class="card-icon"><i data-lucide="check-circle"></i></div><div><h3>तपशील स्वतंत्रपणे देण्याची गरज नाही</h3><p>अंगणवाडी व बँक तपशील स्वतंत्रपणे देण्याची गरज नाही.</p></div></div>
+                    <div class="card horizontal reveal"><div class="card-icon"><i data-lucide="file-text"></i></div><div><h3>वारंवार कागदपत्रांची गरज नाही</h3><p>वारंवार कागदपत्रे सादर करण्याची गरज असणार नाही.</p></div></div>
                 </div>
             </div>
         </section>
 
+        <!-- Timeline Section -->
         <section id="timeline" class="section">
             <div class="container">
                 <h2 class="section-title reveal">मुलीच्या उज्ज्वल भविष्यासाठी एकूण ₹1.01 लाख रुपयांची तरतूद</h2>
+                
                 <div class="timeline-container">
                     <div class="timeline">
                         <div class="timeline-item reveal"><div class="timeline-dot">01</div><div class="timeline-content"><h3>जन्मानंतर</h3><div class="amount">₹5,000</div></div></div>
@@ -312,14 +406,92 @@
                         <div class="timeline-item reveal"><div class="timeline-dot">05</div><div class="timeline-content"><h3>18 वर्षे पूर्ण झाल्यावर</h3><div class="amount">₹75,000</div></div></div>
                     </div>
                 </div>
+
                 <div class="total-benefit reveal">
                     <p>5 टप्प्यात मिळणारा एकूण लाभ</p>
                     <div class="total-amount"><i data-lucide="indian-rupee"></i>१,०१,०००</div>
                 </div>
             </div>
         </section>
+
+        <!-- Deadlines Section -->
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title reveal">अर्जाची महत्त्वाची मुदत</h2>
+                <div class="grid-3">
+                    <div class="card reveal"><div class="card-icon-wrap"><i data-lucide="calendar-days"></i></div>
+                        <p><strong>१ एप्रिल २०२३</strong> पासून पात्र ठरलेल्या लाभार्थ्यांना <strong>१५ ऑगस्ट २०२५</strong> पर्यंत ऑनलाइन अर्जाची संधी</p>
+                    </div>
+                    <div class="card reveal"><div class="card-icon-wrap"><i data-lucide="clock"></i></div>
+                        <p>त्यानंतरच्या नवीन प्रकरणांसाठी मुलीच्या जन्मानंतर १ वर्षाच्या आत अर्ज करावा लागणार</p>
+                    </div>
+                    <div class="card reveal"><div class="card-icon-wrap"><i data-lucide="check-circle"></i></div>
+                        <p>कुटुंब महाराष्ट्राचे रहिवासी असणे, पिवळे/केशरी रेशन कार्ड असणे आणि शासनाने निश्चित केलेल्या उत्पन्न व इतर पात्रता अटी पूर्ण करणे आवश्यक आहे.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eligibility Section -->
+        <section id="eligibility" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">पात्रता</h2>
+                <div class="eligibility-box reveal">
+                    <ul class="eligibility-list">
+                        <li><i data-lucide="check-circle"></i> महाराष्ट्राचे रहिवासी</li>
+                        <li><i data-lucide="check-circle"></i> पिवळे/केशरी रेशन कार्ड</li>
+                        <li><i data-lucide="check-circle"></i> शासनाने निश्चित केलेल्या उत्पन्नाच्या अटी</li>
+                        <li><i data-lucide="check-circle"></i> इतर आवश्यक पात्रता अटी</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Statistics -->
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title reveal">लेक लाडकी योजनेतील महत्त्वाचे मुद्दे</h2>
+                <div class="grid-4">
+                    <div class="stat-card reveal"><div class="stat-val">₹1,01,000</div><div class="stat-label">एकूण लाभ</div></div>
+                    <div class="stat-card reveal" style="transition-delay: 0.1s;"><div class="stat-val">5</div><div class="stat-label">लाभाचे टप्पे</div></div>
+                    <div class="stat-card reveal" style="transition-delay: 0.2s;"><div class="stat-val">DBT</div><div class="stat-label">थेट बँक खात्यात लाभ</div></div>
+                    <div class="stat-card reveal" style="transition-delay: 0.3s;"><div class="stat-val">e-KYC</div><div class="stat-label">सुलभ पडताळणी</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <div class="container faq-container">
+                <h2 class="section-title reveal">वारंवार विचारले जाणारे प्रश्न</h2>
+                
+                <div class="faq-accordion reveal">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">अर्ज ऑनलाइन करता येणार का? <i data-lucide="chevron-down"></i></button>
+                        <div class="faq-answer"><p>आपले सरकार पोर्टलवरून थेट ऑनलाइन अर्ज करता येणार.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">लाभाची रक्कम कशी मिळणार? <i data-lucide="chevron-down"></i></button>
+                        <div class="faq-answer"><p>लाभाची रक्कम DBT द्वारे थेट बँक खात्यात जमा होणार.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">एकूण किती लाभ मिळणार? <i data-lucide="chevron-down"></i></button>
+                        <div class="faq-answer"><p>5 टप्प्यांत एकूण ₹1,01,000 लाभ मिळणार.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">अर्ज किती वेळा करावा लागणार? <i data-lucide="chevron-down"></i></button>
+                        <div class="faq-answer"><p>मुलीच्या जन्मानंतर एकदाच अर्ज करावा लागणार.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">e-KYC कोणाची करण्यात येणार? <i data-lucide="chevron-down"></i></button>
+                        <div class="faq-answer"><p>लाभार्थी मुलगी, तिचे माता-पिता यांची e-KYC करण्यात येणार.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container footer-container">
             <h2>लेक लाडकी योजना</h2>
@@ -329,24 +501,55 @@
     </footer>
 
     <!-- ==========================================
+         WHATSAPP FLOATING SHARE BUTTON
+    =========================================== -->
+    <a href="#" id="wa-share-btn" class="whatsapp-float" aria-label="Share on WhatsApp" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- ==========================================
          JAVASCRIPT LOGIC
     =========================================== -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        // GUARANTEED CLOSE BUTTON FUNCTIONALITY (Runs immediately)
+        // 1. GUARANTEED CLOSE BUTTON FUNCTIONALITY (Instant Close)
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById("onesignal-modal");
             const btnCloseModal = document.getElementById("close-modal");
             
             btnCloseModal.addEventListener('click', (e) => {
                 e.preventDefault();
-                modal.style.display = 'none'; // Closes modal immediately
+                modal.style.display = 'none'; 
             });
         });
 
+        // 2. UI, MENU & ACCORDION
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize Icons
             if (typeof lucide !== 'undefined') { lucide.createIcons(); }
+
+            // Hamburger Menu
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            const navLinks = navMenu.querySelectorAll('a');
+
+            if(hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                    const icon = navMenu.classList.contains('active') ? 'x' : 'menu';
+                    hamburger.innerHTML = `<i data-lucide="${icon}"></i>`;
+                    lucide.createIcons();
+                });
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        hamburger.innerHTML = `<i data-lucide="menu"></i>`;
+                        lucide.createIcons();
+                    });
+                });
+            }
 
             // Sticky Header
             const header = document.getElementById('header');
@@ -367,100 +570,99 @@
                     });
                 }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
                 revealElements.forEach(el => observer.observe(el));
+            } else {
+                revealElements.forEach(el => el.classList.add('reveal-active'));
             }
 
-            /* ==========================================================
-               ONESIGNAL NOTIFICATION LOGIC 
-            ========================================================== */
-            const ONESIGNAL_APP_ID = "7171c1c5-1f40-4c60-b965-00ff2d3b2b0f";
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const questionBtn = item.querySelector('.faq-question');
+                questionBtn.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    faqItems.forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    });
+                    if (!isActive) {
+                        item.classList.add('active');
+                        questionBtn.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // WhatsApp Share Logic
+            const waBtn = document.getElementById('wa-share-btn');
+            const shareUrl = "https://www.vitthalspeaks.com/";
+            const shareText = "लेक लाडकी योजना - अर्ज प्रक्रिया, लाभ, पात्रता आणि महत्त्वाची माहिती नक्की वाचा:\n";
+            waBtn.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + shareUrl)}`;
+        });
+
+        /* ==========================================================
+           3. ONESIGNAL NOTIFICATION LOGIC (NO ID DISPLAY, AUTO CLOSE)
+        ========================================================== */
+        const ONESIGNAL_APP_ID = "7171c1c5-1f40-4c60-b965-00ff2d3b2b0f";
+        
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function(OneSignal) {
             
             const button = document.getElementById("notifyButton");
             const status = document.getElementById("status");
-            const deviceBox = document.getElementById("deviceBox");
-            const deviceIdElement = document.getElementById("deviceId");
-            const copyButton = document.getElementById("copyButton");
             const modal = document.getElementById("onesignal-modal");
-            
-            let currentDeviceId = null;
 
-            window.OneSignalDeferred = window.OneSignalDeferred || [];
-            OneSignalDeferred.push(async function(OneSignal) {
-                try {
-                    await OneSignal.init({
-                        appId: ONESIGNAL_APP_ID,
-                        notifyButton: { enable: false },
-                        allowLocalhostAsSecureOrigin: true // Important for local testing
-                    });
+            try {
+                await OneSignal.init({
+                    appId: ONESIGNAL_APP_ID,
+                    notifyButton: { enable: false }
+                });
 
-                    button.disabled = false;
-                    button.innerHTML = "🔔 माहिती मिळवा";
-                    status.innerHTML = "अशाच प्रकारच्या माहितीसाठी सूचना सुरू करा.";
-
-                    // Check if already subscribed
-                    const subscription = OneSignal.User.PushSubscription;
-                    if (subscription && subscription.optedIn && subscription.id) {
-                        showDevice(subscription.id);
-                        status.innerHTML = "✅ तुम्ही आधीच सूचना सुरू केल्या आहेत.";
-                        button.innerHTML = "✅ सूचना सुरू आहेत";
-                        button.disabled = true;
-                        setTimeout(() => { modal.style.display = 'none'; }, 2000);
-                    }
-
-                } catch(error) {
-                    console.error("OneSignal init error:", error);
-                    button.disabled = true;
-                    button.innerHTML = "सेवा अनुपलब्ध";
-                    status.innerHTML = "सिस्टीम सुरू होऊ शकली नाही. कृपया 'X' वर क्लिक करून माहिती वाचा.";
+                // Check if already subscribed
+                const permission = await OneSignal.Notifications.permission;
+                
+                if (permission === 'granted') {
+                    // User already subscribed, DO NOT show modal
+                    modal.style.display = 'none';
+                } else {
+                    // Show modal if not subscribed or permission denied previously
+                    modal.style.display = 'flex';
                 }
-            });
 
-            // Request Permission Button Click
-            button.addEventListener("click", async function() {
-                button.disabled = true;
-                button.innerHTML = '<span class="loading"></span> परवानगी विचारत आहे...';
-                status.innerText = "कृपया ब्राउझरने विचारल्यावर Allow वर क्लिक करा.";
+                // Request Permission Button Click
+                button.addEventListener("click", async function() {
+                    button.disabled = true;
+                    button.innerHTML = 'प्रतीक्षेत...';
+                    status.innerText = "कृपया ब्राउझरने विचारल्यावर 'Allow' वर क्लिक करा.";
 
-                try {
-                    await OneSignal.Notifications.requestPermission();
-                    await wait(1500);
+                    try {
+                        await OneSignal.Notifications.requestPermission();
+                        const newPermission = await OneSignal.Notifications.permission;
 
-                    const subscription = OneSignal.User.PushSubscription;
-                    if (subscription && subscription.optedIn && subscription.id) {
-                        showDevice(subscription.id);
-                        status.innerHTML = "✅ सूचना यशस्वीरीत्या सुरू झाल्या आहेत.";
-                        button.innerHTML = "✅ सूचना सुरू झाल्या";
-                        button.disabled = true;
-                    } else {
-                        status.innerHTML = "❌ तुम्ही परवानगी नाकारली आहे.";
+                        if (newPermission === 'granted') {
+                            // SUCCESS: Hide Modal quickly without showing any ID
+                            status.innerHTML = "✅ सूचना यशस्वीरीत्या सुरू झाल्या आहेत!";
+                            button.innerHTML = "✅ यशस्वी";
+                            
+                            setTimeout(() => {
+                                modal.style.display = 'none';
+                            }, 1200);
+
+                        } else {
+                            // DENIED
+                            status.innerHTML = "❌ तुम्ही परवानगी नाकारली आहे.";
+                            button.innerHTML = "🔔 पुन्हा प्रयत्न करा";
+                            button.disabled = false;
+                        }
+                    } catch(error) {
+                        status.innerHTML = "❌ काहीतरी चूक झाली.";
                         button.innerHTML = "🔔 पुन्हा प्रयत्न करा";
                         button.disabled = false;
                     }
-                } catch(error) {
-                    status.innerHTML = "❌ काहीतरी चूक झाली.";
-                    button.innerHTML = "🔔 पुन्हा प्रयत्न करा";
-                    button.disabled = false;
-                }
-            });
+                });
 
-            function showDevice(id) {
-                currentDeviceId = id;
-                deviceBox.style.display = "block";
-                deviceIdElement.innerText = id;
+            } catch(error) {
+                console.error("OneSignal init error:", error);
+                modal.style.display = 'none'; // Safely hide modal if system fails
             }
-
-            // Copy Device ID
-            copyButton.addEventListener("click", async function() {
-                if (!currentDeviceId) return;
-                try {
-                    await navigator.clipboard.writeText(currentDeviceId);
-                    copyButton.innerText = "✅ कॉपी केले!";
-                    setTimeout(function() { copyButton.innerText = "📋 आयडी कॉपी करा"; }, 1500);
-                } catch(error) {
-                    console.error("Copy failed:", error);
-                }
-            });
-
-            function wait(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
         });
     </script>
 </body>
