@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>प्रसूती सहाय्य योजना | महाराष्ट्र शासन</title>
+  <meta name="description" content="महाराष्ट्रातील महिलांना प्रसूतीसाठी २५ हजार रुपये. प्रसूती सहाय्य योजनेची माहिती, अर्ज प्रक्रिया, पात्रता, कागदपत्रे आणि अधिकृत PDF.">
+  <!-- Google Font: Noto Sans Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons (lightweight) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      background: #faf6f0;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin:0 auto; padding: 0 24px; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* Color palette – inspired by previous page */
+    :root {
+      --bg-cream: #fcf6ef;
+      --bg-peach: #f9ebe0;
+      --purple-deep: #4a148c;
+      --purple-bright: #6a1b9a;
+      --magenta: #ad1457;
+      --pink-soft: #f8d7da;
+      --gold: #f5a623;
+      --text-muted: #475569;
+      --white: #ffffff;
+      --shadow: 0 8px 24px rgba(74,20,140,0.08);
+    }
+
+    h1, h2, h3 { color: var(--purple-deep); line-height: 1.3; }
+    h1 { font-size: 2.5rem; font-weight: 800; }
+    h2 { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 2rem; }
+    h3 { font-size: 1.25rem; font-weight: 600; color: var(--magenta); }
+    p { color: var(--text-muted); font-size: 1.05rem; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 50px; font-weight: 600;
+      border: none; cursor: pointer; transition: 0.2s;
+    }
+    .btn-primary { background: var(--purple-deep); color: white; }
+    .btn-primary:hover { background: var(--purple-bright); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(74,20,140,0.2); }
+    .btn-outline { background: transparent; border: 2px solid var(--purple-deep); color: var(--purple-deep); }
+    .btn-outline:hover { background: var(--purple-deep); color: white; }
+
+    /* header */
+    header {
+      background: white;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      position: sticky; top:0; z-index: 50;
+    }
+    .header-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 72px;
+    }
+    .logo {
+      font-weight: 800; font-size: 1.4rem;
+      background: linear-gradient(135deg, var(--purple-deep), var(--magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav a { margin-left: 24px; font-weight: 500; color: #1e293b; transition: 0.2s; }
+    .nav a:hover { color: var(--magenta); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(145deg, var(--bg-cream) 0%, var(--bg-peach) 100%);
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: flex; align-items: center; gap: 40px;
+    }
+    .hero-content { flex: 1; }
+    .hero-content h1 { 
+      background: linear-gradient(135deg, var(--purple-deep), var(--magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    .hero-badge {
+      display: inline-block; background: var(--magenta); color: white;
+      padding: 6px 18px; border-radius: 40px; font-weight: 600; font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+    .hero-highlight {
+      font-size: 1.25rem; font-weight: 600; color: var(--purple-deep);
+      margin: 16px 0 24px;
+    }
+    .hero-visual { flex: 1; display: flex; justify-content: center; }
+    .hero-svg { max-width: 360px; width: 100%; }
+
+    .deco-blob {
+      position: absolute; border-radius: 50%; opacity: 0.25;
+      pointer-events: none;
+    }
+    .blob1 { width: 300px; height: 300px; background: #f3d9dc; top: -80px; right: -60px; }
+    .blob2 { width: 200px; height: 200px; background: #f5d0c5; bottom: -30px; left: -30px; }
+
+    /* sections */
+    .section { padding: 60px 0; }
+    .section-alt { background: var(--bg-peach); border-radius: 40px; margin: 10px 0; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+
+    .card {
+      background: white; padding: 28px 22px; border-radius: 24px;
+      box-shadow: var(--shadow); transition: 0.25s;
+      border: 1px solid rgba(74,20,140,0.04);
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(74,20,140,0.1); }
+    .card-icon {
+      width: 48px; height: 48px; background: var(--bg-peach);
+      border-radius: 16px; display: flex; align-items: center; justify-content: center;
+      color: var(--magenta); margin-bottom: 16px;
+    }
+    .step-badge {
+      display: inline-block; background: var(--purple-deep); color: white;
+      padding: 2px 14px; border-radius: 40px; font-size: 0.8rem; font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .doc-list {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin-top: 12px;
+    }
+    .doc-tag {
+      background: var(--bg-cream); padding: 8px 18px; border-radius: 40px;
+      font-size: 0.95rem; display: flex; align-items: center; gap: 8px;
+      border: 1px solid #e9dfd7;
+    }
+
+    .rule-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 0; border-bottom: 1px solid #f0e8e0;
+    }
+    .rule-list li:last-child { border-bottom: none; }
+
+    /* PDF viewer */
+    .pdf-section {
+      background: white; border-radius: 28px; padding: 24px 24px 32px;
+      box-shadow: var(--shadow); margin-top: 32px;
+    }
+    .pdf-actions {
+      display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;
+      margin-top: 16px;
+    }
+    .pdf-viewer {
+      width: 100%; height: 480px; border: 1px solid #e2d6cc; border-radius: 16px;
+      background: #f5f0eb; overflow: hidden;
+    }
+    .pdf-viewer iframe { width: 100%; height: 100%; border: none; }
+
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px;
+      background: #25D366; color: white; width: 60px; height: 60px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.4); z-index: 999;
+      transition: 0.2s; cursor: pointer;
+    }
+    .whatsapp-float:hover { transform: scale(1.08); }
+
+    footer {
+      background: var(--purple-deep); color: white; padding: 40px 0 20px;
+      text-align: center; margin-top: 40px;
+    }
+    footer p { color: #d9c8e8; }
+
+    @media (max-width: 768px) {
+      .hero-grid { flex-direction: column; text-align: center; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      h1 { font-size: 2rem; }
+      .pdf-viewer { height: 320px; }
+      .nav { display: none; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .pdf-viewer { height: 240px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <span class="logo">प्रसूती सहाय्य योजना</span>
+    <nav class="nav">
+      <a href="#about">माहिती</a>
+      <a href="#steps">अर्ज प्रक्रिया</a>
+      <a href="#docs">कागदपत्रे</a>
+      <a href="#pdf">PDF</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="deco-blob blob1"></div>
+  <div class="deco-blob blob2"></div>
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">✨ महाराष्ट्र शासन</div>
+      <h1>प्रसूती सहाय्य योजना</h1>
+      <p style="font-size:1.2rem; font-weight:500; color:var(--purple-deep);">महिलांना प्रसूतीसाठी ₹२५,००० रुपये थेट मदत</p>
+      <p class="hero-highlight">महाराष्ट्र इमारत व इतर बांधकाम कामगार कल्याणकारी मंडळ, मुंबई अंतर्गत नोंदणीकृत महिला बांधकाम कामगारांसाठी.</p>
+      <a href="#pdf" class="btn btn-primary">📄 अधिकृत PDF पहा</a>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 300 280" class="hero-svg">
+        <circle cx="150" cy="140" r="120" fill="#f3d9dc" opacity="0.3" />
+        <circle cx="150" cy="140" r="90" fill="#f5d0c5" opacity="0.5" />
+        <circle cx="150" cy="140" r="60" fill="#f9d7d0" opacity="0.7" />
+        <path d="M90 200 L210 200 L200 120 L130 100 L100 120 L90 200" fill="#ad1457" opacity="0.25" />
+        <circle cx="140" cy="110" r="18" fill="#ad1457" />
+        <circle cx="170" cy="110" r="14" fill="#4a148c" />
+        <path d="M110 220 Q150 250 190 220" stroke="#4a148c" stroke-width="4" fill="none" stroke-linecap="round" />
+        <text x="130" y="175" font-size="22" fill="#4a148c" font-weight="bold">₹25k</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / INFO -->
+<section id="about" class="section">
+  <div class="container">
+    <h2>📋 योजनेबद्दल संपूर्ण माहिती</h2>
+    <div style="max-width: 900px; margin:0 auto; background:white; padding:32px; border-radius:28px; box-shadow:var(--shadow);">
+      <p style="font-size:1.15rem; font-weight:500; color:var(--purple-deep);">
+        महाराष्ट्रातील महिलांना प्रसूतीसाठी (डिलिव्हरी) तब्बल ₹२५,००० रुपये मिळणार आहेत.
+      </p>
+      <p style="margin-top:12px;">
+        महाराष्ट्र शासनाने <strong>प्रसूती सहाय्य योजना</strong> लागू केली आहे. 
+        <strong>सामाजिक सुरक्षा संहिता 2020</strong> च्या अनुषंगाने महाराष्ट्र इमारत व इतर बांधकाम कामगार कल्याणकारी मंडळ, मुंबई अंतर्गत नोंदणीकृत (सक्रिय) महिला बांधकाम कामगारांना हा लाभ दिला जाईल.
+      </p>
+      <div style="background: #f9f0ea; padding:16px 20px; border-radius:16px; margin-top:16px; border-left: 4px solid var(--magenta);">
+        <p style="font-weight:600; color:var(--purple-deep);">⚠️ महत्त्वाचे:</p>
+        <p>या योजनेचा लाभ घेण्यासाठी <strong>कामगार नोंदणी कार्ड</strong> असणे आवश्यक आहे. ज्यांच्याकडे नोंदणी नाही, त्यांनी त्वरित नोंदणी करावी.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY & RULES -->
+<section class="section section-alt">
+  <div class="container">
+    <h2>📌 नियम व अटी</h2>
+    <div style="max-width:900px; margin:0 auto; background:white; padding:28px 32px; border-radius:28px; box-shadow:var(--shadow);">
+      <ul class="rule-list">
+        <li><span style="color:var(--magenta); font-weight:700;">1.</span> अर्जदार ही MBOCWW अंतर्गत नोंदणीकृत महिला बांधकाम कामगार किंवा नोंदणीकृत पुरुष कामगाराची पत्नी असावी.</li>
+        <li><span style="color:var(--magenta); font-weight:700;">2.</span> अर्जदार गर्भवती असावी.</li>
+        <li><span style="color:var(--magenta); font-weight:700;">3.</span> लाभ फक्त पहिल्या दोन डिलिव्हरींसाठी उपलब्ध आहे.</li>
+        <li><span style="color:var(--magenta); font-weight:700;">4.</span> कामगार नोंदणी कार्ड सक्रिय असणे आवश्यक.</li>
+        <li><span style="color:var(--magenta); font-weight:700;">5.</span> अर्ज संबंधित कामगार आयुक्त/शासकीय कामगार अधिकारी यांच्याकडे सादर करावा.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION STEPS -->
+<section id="steps" class="section">
+  <div class="container">
+    <h2>📝 अर्ज कसा करावा? (४ सोप्या स्टेप्स)</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-icon"><i data-lucide="file-down"></i></div>
+        <span class="step-badge">स्टेप १</span>
+        <h3>अर्ज फॉर्म डाउनलोड करा</h3>
+        <p>MBOCWW च्या अधिकृत वेबसाईटवरून अर्ज फॉर्म डाउनलोड करा.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i data-lucide="pen-square"></i></div>
+        <span class="step-badge">स्टेप २</span>
+        <h3>अर्ज भरा आणि कागदपत्रे जोडा</h3>
+        <p>सर्व अनिवार्य रकाने भरा आणि आवश्यक कागदपत्रांच्या स्व-साक्षांकित प्रती जोडा.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i data-lucide="building-2"></i></div>
+        <span class="step-badge">स्टेप ३</span>
+        <h3>अर्ज सादर करा</h3>
+        <p>रीतसर भरलेला व सही केलेला अर्ज कामगार आयुक्त / शासकीय कामगार अधिकारी यांच्याकडे सादर करा.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i data-lucide="badge-check"></i></div>
+        <span class="step-badge">स्टेप ४</span>
+        <h3>पावती घ्या</h3>
+        <p>अर्ज सादर केल्यानंतर पावती किंवा पोहोचपावती घ्या. त्यात तारीख, वेळ आणि विशिष्ट ओळख क्रमांक असल्याची खात्री करा.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section id="docs" class="section section-alt">
+  <div class="container">
+    <h2>📂 आवश्यक कागदपत्रे</h2>
+    <div style="max-width:900px; margin:0 auto; background:white; padding:28px 32px; border-radius:28px; box-shadow:var(--shadow);">
+      <div class="doc-list">
+        <span class="doc-tag"><i data-lucide="image"></i> पासपोर्ट आकाराचा फोटो</span>
+        <span class="doc-tag"><i data-lucide="credit-card"></i> आधार कार्ड</span>
+        <span class="doc-tag"><i data-lucide="badge"></i> MBOCWW ओळखपत्र</span>
+        <span class="doc-tag"><i data-lucide="landmark"></i> बँक पासबुक</span>
+        <span class="doc-tag"><i data-lucide="file-text"></i> प्रसूती प्रमाणपत्र (नैसर्गिक/शस्त्रक्रिया)</span>
+        <span class="doc-tag"><i data-lucide="clipboard-pulse"></i> वैद्यकीय उपचार देयके</span>
+        <span class="doc-tag"><i data-lucide="home"></i> रहिवासाचा पुरावा (आधार/पासपोर्ट/ड्रायव्हिंग लायसन्स/रेशन शीट/वीज बिल/ग्रामपंचायत प्रमाणपत्र)</span>
+      </div>
+      <p style="margin-top:16px; font-size:0.95rem; color:var(--text-muted);">* सर्व कागदपत्रांच्या स्व-साक्षांकित प्रती आवश्यक.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PDF SECTION (view + download) -->
+<section id="pdf" class="section">
+  <div class="container">
+    <h2>📄 अधिकृत जीआर (PDF)</h2>
+    <div class="pdf-section">
+      <div class="pdf-viewer">
+        <iframe src="https://drive.google.com/file/d/1SyUsSIwfj1f7-xiPAc0VDEY7ok7WXPpJ/preview" allowfullscreen></iframe>
+      </div>
+      <div class="pdf-actions">
+        <a href="https://drive.google.com/file/d/1SyUsSIwfj1f7-xiPAc0VDEY7ok7WXPpJ/view?usp=sharing" target="_blank" class="btn btn-outline" rel="noopener noreferrer">
+          <i data-lucide="eye"></i> PDF उघडा (Drive)
+        </a>
+        <a href="https://drive.google.com/uc?export=download&id=1SyUsSIwfj1f7-xiPAc0VDEY7ok7WXPpJ" class="btn btn-primary" download>
+          <i data-lucide="download"></i> PDF डाउनलोड करा
+        </a>
+      </div>
+      <p style="text-align:center; margin-top:12px; font-size:0.9rem; color:var(--text-muted);">
+        वरील PDF थेट या पेजवर पाहता येतो. डाउनलोड बटणावर क्लिक करून सेव्ह करा.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p style="font-size:1.2rem; font-weight:600; color:white;">प्रसूती सहाय्य योजना — महाराष्ट्र शासन</p>
+    <p>अधिक माहितीसाठी संबंधित कामगार आयुक्त कार्यालयाशी संपर्क साधा.</p>
+    <div style="margin-top:20px; border-top:1px solid #6b3f8a; padding-top:20px; font-size:0.9rem; color:#c9b3db;">
+      &copy; 2026 | सर्व हक्क राखीव
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP SHARE FLOATING BUTTON -->
+<a href="#" id="wa-share" class="whatsapp-float" aria-label="Share on WhatsApp" target="_blank" rel="noopener">
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lucide icons
+    lucide.createIcons();
+
+    // WhatsApp share link
+    const waBtn = document.getElementById('wa-share');
+    const url = encodeURIComponent('https://www.vitthalspeaks.com/');
+    const text = encodeURIComponent('प्रसूती सहाय्य योजना – महाराष्ट्र शासन ₹25,000 मदत. माहिती आणि PDF: ');
+    waBtn.href = `https://api.whatsapp.com/send?text=${text}${url}`;
+
+    // optional smooth scroll for nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
