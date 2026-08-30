@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>माझी कन्या भाग्यश्री योजना - Infographic</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary: #d81b60;
+            --primary-light: #f48fb1;
+            --primary-dark: #ad1457;
+            --bg-color: #fdf4f7;
+            --text-color: #2c3e50;
+            --white: #ffffff;
+            --success: #2e7d32;
+            --success-light: #e8f5e9;
+            --danger: #c62828;
+            --danger-light: #ffebee;
+            --card-shadow: 0 10px 20px rgba(216, 27, 96, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Mukta', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(173, 20, 87, 0.3);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Abstract Vector Background Shapes */
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        .shape-1 { width: 300px; height: 300px; top: -100px; left: -50px; }
+        .shape-2 { width: 200px; height: 200px; bottom: -50px; right: -50px; }
+        .shape-3 { width: 150px; height: 150px; top: 20px; right: 20%; opacity: 0.05; }
+
+        section {
+            padding: 50px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Benefits Cards */
+        .benefits-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            width: 350px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-top: 5px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(216, 27, 96, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        /* Eligibility Comparison */
+        .eligibility-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .eligibility-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .eligibility-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .box-green { border-left: 5px solid var(--success); }
+        .box-red { border-left: 5px solid var(--danger); }
+
+        .box-green h3 { color: var(--success); }
+        .box-red h3 { color: var(--danger); }
+
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .box-green .list-item:hover { background: var(--success-light); }
+        .box-red .list-item:hover { background: var(--danger-light); }
+
+        /* Conditions Grid */
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .condition-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 4px solid var(--primary-light);
+        }
+
+        .condition-icon {
+            font-size: 1.8rem;
+            background: var(--bg-color);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        /* Documents Section */
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .doc-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .doc-item:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .doc-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Process Section */
+        .process-box {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(44, 62, 80, 0.2);
+            margin-top: 20px;
+        }
+
+        .process-box h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #f1c40f;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            color: #f1c40f;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .eligibility-container {
+                grid-template-columns: 1fr;
+            }
+            header h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+            .benefit-card { width: 100%; }
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .benefit-icon { animation: float 3s ease-in-out infinite; }
+        
+        /* Fade In Animation classes for JS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="container">
+            <h1>माझी कन्या भाग्यश्री योजना</h1>
+            <p>मुलींच्या उज्ज्वल भविष्यासाठी महाराष्ट्र शासनाची महत्त्वपूर्ण योजना</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Benefits Section -->
+        <section class="fade-in">
+            <h2 class="section-title">योजनेचे प्रमुख आर्थिक लाभ</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">👧</div>
+                    <h3>एक मुलगी असल्यास</h3>
+                    <p>पालकांनी कुटुंब नियोजनाची शस्त्रक्रिया केल्यास मुलीच्या नावावर</p>
+                    <div class="benefit-amount">₹ 50,000</div>
+                    <p>मुदत ठेव (Fixed Deposit)</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👧👧</div>
+                    <h3>दोन मुली असल्यास</h3>
+                    <p>कुटुंब नियोजनाची शस्त्रक्रिया केल्यास दोन्ही मुलींच्या नावावर प्रत्येकी</p>
+                    <div class="benefit-amount">₹ 25,000</div>
+                    <p>मुदत ठेव (Fixed Deposit)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eligibility Section -->
+        <section class="fade-in">
+            <h2 class="section-title">पात्रता निकष</h2>
+            <div class="eligibility-container">
+                <!-- Who is eligible -->
+                <div class="eligibility-box box-green">
+                    <h3>✅ कोण पात्र आहे?</h3>
+                    <div class="list-item">
+                        <span>📍</span>
+                        <p>कुटुंब महाराष्ट्राचा मूळ रहिवासी असावे (आई किंवा वडील).</p>
+                    </div>
+                    <div class="list-item">
+                        <span>💰</span>
+                        <p>कुटुंबाचे वार्षिक उत्पन्न <strong>₹ 7.50 लाखांपर्यंत</strong> असणे आवश्यक.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>📅</span>
+                        <p><strong>1 ऑगस्ट 2017</strong> रोजी किंवा त्यानंतर जन्मलेली मुलगी योजनेस पात्र.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>👯‍♀️</span>
+                        <p>दुसऱ्या प्रसुतीत जुळ्या मुली झाल्या तरी त्या योजनेस पात्र ठरू शकतात.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>📜</span>
+                        <p>मुलीची जन्मनोंदणी झालेली असणे आवश्यक आहे.</p>
+                    </div>
+                </div>
+
+                <!-- Who is not eligible -->
+                <div class="eligibility-box box-red">
+                    <h3>❌ कोण अपात्र आहे?</h3>
+                    <div class="list-item">
+                        <span>👦👧</span>
+                        <p>पहिले अपत्य मुलगा आणि दुसरे अपत्य मुलगी असल्यास लाभ मिळत नाही.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>👧👦</span>
+                        <p>पहिले अपत्य मुलगी आणि दुसरे अपत्य मुलगा असल्यास लाभ मिळत नाही.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>👶👶👶</span>
+                        <p>कुटुंबात <strong>तिसरे अपत्य जन्मल्यास</strong> लाभ मिळत नाही आणि आधीच्या मुलींचा लाभही बंद होऊ शकतो.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>✂️</span>
+                        <p>कुटुंब नियोजनाची आवश्यक शस्त्रक्रिया/प्रमाणपत्र सादर केलेले नसल्यास.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>💍</span>
+                        <p>मुलीचे 18 वर्षांपूर्वी लग्न झाल्यास अंतिम लाभासाठी ती अपात्र ठरते.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Conditions Section -->
+        <section class="fade-in">
+            <h2 class="section-title">महत्त्वाच्या अटी व शर्ती</h2>
+            <div class="conditions-grid">
+                <div class="condition-card">
+                    <div class="condition-icon">⏱️</div>
+                    <p><strong>शस्त्रक्रियेची मुदत:</strong> एका मुलीनंतर शस्त्रक्रिया 1 वर्षाच्या आत, तर दोन मुलीनंतर 6 महिन्यांच्या आत करणे आवश्यक.</p>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-icon">🎓</div>
+                    <p><strong>अंतिम लाभ:</strong> मुलीचे 18 वर्षे पूर्ण व ती अविवाहित असावी (2022 च्या सुधारणेनुसार 10वी उत्तीर्ण असण्याची अट रद्द).</p>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-icon">💉</div>
+                    <p><strong>लसीकरण:</strong> मुलीचे आवश्यक ते सर्व लसीकरण झालेले असणे बंधनकारक आहे.</p>
+                </div>
+                <div class="condition-card">
+                    <div class="condition-icon">👨‍👩‍👧</div>
+                    <p><strong>उत्पन्न अट:</strong> मूळ अटीनुसार कुटुंबाचे वार्षिक उत्पन्न ₹8 लाखांपर्यंत (नवीन सुधारणेनुसार ₹7.50 लाख) असावे.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documents Section -->
+        <section class="fade-in">
+            <h2 class="section-title">आवश्यक कागदपत्रे</h2>
+            <div class="docs-grid">
+                <div class="doc-item"><div class="doc-icon">👧</div><p>मुलीचा जन्म दाखला</p></div>
+                <div class="doc-item"><div class="doc-icon">🪪</div><p>मुलीचे आधार कार्ड</p></div>
+                <div class="doc-item"><div class="doc-icon">🪪</div><p>आई-वडिलांचे आधार कार्ड</p></div>
+                <div class="doc-item"><div class="doc-icon">🏠</div><p>महाराष्ट्र रहिवासी प्रमाणपत्र</p></div>
+                <div class="doc-item"><div class="doc-icon">💰</div><p>उत्पन्नाचा दाखला</p></div>
+                <div class="doc-item"><div class="doc-icon">🏦</div><p>बँक पासबुक</p></div>
+                <div class="doc-item"><div class="doc-icon">👨‍👩‍👧</div><p>रेशन कार्ड</p></div>
+                <div class="doc-item"><div class="doc-icon">👩‍⚕️</div><p>कुटुंब नियोजन प्रमाणपत्र</p></div>
+                <div class="doc-item"><div class="doc-icon">📱</div><p>मोबाईल नंबर</p></div>
+                <div class="doc-item"><div class="doc-icon">📸</div><p>पासपोर्ट फोटो</p></div>
+                <div class="doc-item"><div class="doc-icon">📝</div><p>योजनेचा अर्ज (प्रपत्र-अ)</p></div>
+            </div>
+            <p style="text-align: center; margin-top: 20px; color: var(--primary-dark); font-weight: 600;">
+                * विशेषतः कुटुंब नियोजन शस्त्रक्रियेचे प्रमाणपत्र आणि मुलीचा जन्म दाखला अत्यंत महत्त्वाचे आहेत.
+            </p>
+        </section>
+
+        <!-- Application Process -->
+        <section class="fade-in">
+            <div class="process-box">
+                <h3>अर्ज कसा आणि कुठे करावा?</h3>
+                <p>ही योजना ICDS/महिला व बाल विकास विभागामार्फत राबवली जाते. अर्जाची प्रक्रिया खालीलप्रमाणे आहे:</p>
+                <div class="process-steps">
+                    <div class="step">१. जवळचे अंगणवाडी केंद्र</div>
+                    <div class="arrow">➡️</div>
+                    <div class="step">२. अंगणवाडी सेविकेकडे अर्ज जमा करणे</div>
+                    <div class="arrow">➡️</div>
+                    <div class="step">३. बाल विकास प्रकल्प अधिकारी (CDPO)</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; सदर माहिती केवळ मार्गदर्शनासाठी आहे. अधिकृत माहितीसाठी नजीकच्या अंगणवाडी केंद्राशी संपर्क साधावा.</p>
+    </footer>
+
+    <!-- JavaScript for scroll animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
