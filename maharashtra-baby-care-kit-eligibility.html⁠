@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>नवजात शिशु स्वागत किट योजना</title>
+    
+    <!-- Loading Tailwind CSS for layout and utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Loading Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Baloo+Bhai+2:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            /* Devanagari font priority for Marathi text */
+            font-family: 'Baloo Bhai 2', 'Noto Sans Devanagari', sans-serif;
+            /* Soft pastel gradient background */
+            background: linear-gradient(135deg, #fff0f5 0%, #e0ffff 50%, #fffacd 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+            color: #374151;
+        }
+
+        /* Fade and slide up animation for elements */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Gentle pulse animation for primary buttons */
+        @keyframes softPulse {
+            0% { transform: scale(1); box-shadow: 0 4px 15px rgba(244, 114, 182, 0.4); }
+            50% { transform: scale(1.03); box-shadow: 0 8px 25px rgba(244, 114, 182, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 4px 15px rgba(244, 114, 182, 0.4); }
+        }
+
+        /* Utility classes for animations */
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+
+        .btn-pulse {
+            animation: softPulse 2.5s infinite;
+        }
+
+        /* Card styling with glassmorphism effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Custom list markers */
+        .custom-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .custom-list-star li::before {
+            content: '⭐';
+            position: absolute;
+            left: 0;
+            top: 0.15rem;
+            font-size: 0.9rem;
+        }
+        .custom-list-check li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 0.15rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="antialiased py-8 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-3xl mx-auto space-y-6">
+        
+        <!-- Header -->
+        <header class="text-center animate-fade-in">
+            <div class="inline-block bg-white/60 px-6 py-2 rounded-full mb-3 shadow-sm border border-white/80">
+                <p class="text-pink-600 font-bold tracking-wide">मातृत्व लाभ योजना</p>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-800 drop-shadow-sm mb-2 leading-tight">
+                नवजात शिशु <span class="text-blue-500">स्वागत किट</span>
+            </h1>
+            <p class="text-gray-600 font-medium mt-2">शासकीय योजनेची संपूर्ण माहिती</p>
+        </header>
+
+        <!-- Section 1: Rules -->
+        <section class="glass-card rounded-3xl p-6 sm:p-8 shadow-lg animate-fade-in delay-100 border-t-4 border-t-pink-400">
+            <h2 class="text-2xl font-bold text-gray-800 mb-5 flex items-center">
+                <span class="mr-3 text-3xl">📌</span> महत्त्वाच्या नियम-अटी
+            </h2>
+            <ul class="custom-list custom-list-star text-gray-700 space-y-3 text-lg">
+                <li>प्रसुती शासकीय प्राथमिक आरोग्य केंद्र/शासकीय रुग्णालयात झाल्यास लाभ मिळतो.</li>
+                <li>गर्भवती महिलेने 9व्या महिन्यात जवळच्या अंगणवाडी केंद्रात अंगणवाडी सेविकेला माहिती/अर्ज द्यायचा आहे.</li>
+                <li>प्रसुती झाल्यानंतरही 2 महिन्यांच्या आत अर्ज करता येतो.</li>
+                <li>अर्ज बाल विकास प्रकल्प अधिकाऱ्यांकडे प्राप्त झाल्यानंतर 3 दिवसांत किट उपलब्ध करून देण्याची तरतूद GR मध्ये आहे.</li>
+                <li>अपवादात्मक परिस्थितीत खासगी रुग्णालयात प्रसुती झाल्यासही पात्रतेची तरतूद GR मध्ये नमूद आहे.</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: Eligibility -->
+        <section class="glass-card rounded-3xl p-6 sm:p-8 shadow-lg animate-fade-in delay-200 border-t-4 border-t-blue-400">
+            <h2 class="text-2xl font-bold text-gray-800 mb-5 flex items-center">
+                <span class="mr-3 text-3xl">🎓</span> पात्रता
+            </h2>
+            <ul class="custom-list custom-list-check text-gray-700 space-y-3 text-lg">
+                <li>महिला महाराष्ट्रातील रहिवासी असणे अपेक्षित.</li>
+                <li>गर्भावस्थेत शासकीय प्राथमिक आरोग्य केंद्र किंवा शासकीय रुग्णालयात नोंदणी केलेली असावी.</li>
+                <li>अधिकृत GR नुसार लाभ पहिल्या प्रसुतीच्या वेळी होणाऱ्या नवजात बाळासाठी आहे. मुलगा किंवा मुलगी दोन्ही पात्र आहेत.</li>
+                <li>समाजातील सर्व घटकांना ही योजना लागू आहे.</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: Kit Contents -->
+        <section class="glass-card rounded-3xl p-6 sm:p-8 shadow-lg animate-fade-in delay-300 border-t-4 border-t-yellow-400">
+            <h2 class="text-2xl font-bold text-gray-800 mb-5 flex items-center">
+                <span class="mr-3 text-3xl">🎁</span> किटमध्ये काय मिळते?
+            </h2>
+            <div class="bg-yellow-50/50 p-5 rounded-2xl border border-yellow-100">
+                <p class="text-gray-800 leading-relaxed text-lg text-justify">
+                    GR नुसार किटची कमाल किंमत <strong>₹2,000</strong> असून त्यात कपडे, प्लास्टिक लंगोट, छोटी गादी, टॉवेल, इलेक्ट्रॉनिक थर्मामीटर, तेल, मच्छरदाणी, ब्लँकेट, प्लास्टिक चटई, शॅम्पू, खेळणे/खुळखुळा, नेलकटर, हातमोजे-पायमोजे, आईसाठी हात धुण्याचे लिक्विड, कापड/लोकरीचे कापड, बॉडी वॉश आणि साहित्य ठेवण्यासाठी बॅग यांचा समावेश आहे.
+                </p>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 pb-10 animate-fade-in delay-400">
+            
+            <!-- Download Button -->
+            <a href="https://i.ibb.co/svH6BCqb/IMG-5031.png" 
+               download="Scheme_Form"
+               target="_blank"
+               class="btn-pulse w-full sm:w-auto flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 bg-gradient-to-r from-pink-500 to-rose-400 rounded-full hover:from-pink-600 hover:to-rose-500 shadow-xl hover:shadow-2xl active:scale-95">
+                <svg class="w-6 h-6 mr-2 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                फॉर्म डाउनलोड करा
+            </a>
+
+            <!-- WhatsApp Share Button -->
+            <!-- We dynamically get the current URL via JS below, but provide a fallback share text here -->
+            <button onclick="shareOnWhatsApp()" 
+               class="w-full sm:w-auto flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 bg-[#25D366] hover:bg-[#1da851] rounded-full shadow-lg hover:shadow-xl active:scale-95">
+                <svg class="w-6 h-6 mr-2 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                </svg>
+                माहिती शेअर करा
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        function shareOnWhatsApp() {
+            // Text to share
+            const shareText = "नवजात शिशु योजनेची महत्त्वाची माहिती नक्की वाचा!";
+            // Get current page URL
+            const pageUrl = window.location.href;
+            
+            // Combine text and URL, encode for safe URL passing
+            const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + "\n\nयेथे क्लिक करा: " + pageUrl)}`;
+            
+            // Open in new tab
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
